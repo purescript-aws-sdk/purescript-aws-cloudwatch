@@ -3,7 +3,7 @@
 #### `deleteAlarms`
 
 ``` purescript
-deleteAlarms :: forall eff. Service -> DeleteAlarmsInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteAlarms :: forall eff. Service -> DeleteAlarmsInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes the specified alarms. In the event of an error, no alarms are deleted.</p>
@@ -43,7 +43,7 @@ describeAlarmsForMetric :: forall eff. Service -> DescribeAlarmsForMetricInput -
 #### `disableAlarmActions`
 
 ``` purescript
-disableAlarmActions :: forall eff. Service -> DisableAlarmActionsInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+disableAlarmActions :: forall eff. Service -> DisableAlarmActionsInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Disables the actions for the specified alarms. When an alarm's actions are disabled, the alarm actions do not execute when the alarm state changes.</p>
@@ -51,7 +51,7 @@ disableAlarmActions :: forall eff. Service -> DisableAlarmActionsInput -> Aff (e
 #### `enableAlarmActions`
 
 ``` purescript
-enableAlarmActions :: forall eff. Service -> EnableAlarmActionsInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+enableAlarmActions :: forall eff. Service -> EnableAlarmActionsInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Enables the actions for the specified alarms.</p>
@@ -99,7 +99,7 @@ putDashboard :: forall eff. Service -> PutDashboardInput -> Aff (exception :: EX
 #### `putMetricAlarm`
 
 ``` purescript
-putMetricAlarm :: forall eff. Service -> PutMetricAlarmInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+putMetricAlarm :: forall eff. Service -> PutMetricAlarmInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Creates or updates an alarm and associates it with the specified metric. Optionally, this operation can associate one or more Amazon SNS resources with the alarm.</p> <p>When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its state is set appropriately. Any actions associated with the state are then executed.</p> <p>When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous configuration of the alarm.</p> <p>If you are an IAM user, you must have Amazon EC2 permissions for some operations:</p> <ul> <li> <p> <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions</p> </li> <li> <p> <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code> for all alarms on EC2 instance status metrics</p> </li> <li> <p> <code>ec2:StopInstances</code> for alarms with stop actions</p> </li> <li> <p> <code>ec2:TerminateInstances</code> for alarms with terminate actions</p> </li> <li> <p> <code>ec2:DescribeInstanceRecoveryAttribute</code> and <code>ec2:RecoverInstances</code> for alarms with recover actions</p> </li> </ul> <p>If you have read/write permissions for Amazon CloudWatch but not for Amazon EC2, you can still create an alarm, but the stop or terminate actions are not performed. However, if you are later granted the required permissions, the alarm actions that you created earlier are performed.</p> <p>If you are using an IAM role (for example, an EC2 instance profile), you cannot stop or terminate the instance using alarm actions. However, you can still see the alarm state and perform any other actions such as Amazon SNS notifications or Auto Scaling policies.</p> <p>If you are using temporary security credentials granted using AWS STS, you cannot stop or terminate an EC2 instance using alarm actions.</p> <p>You must create at least one stop, terminate, or reboot alarm using either the Amazon EC2 or CloudWatch consoles to create the <b>EC2ActionsAccess</b> IAM role. After this IAM role is created, you can create stop, terminate, or reboot alarms using a command-line interface or API.</p>
@@ -107,7 +107,7 @@ putMetricAlarm :: forall eff. Service -> PutMetricAlarmInput -> Aff (exception :
 #### `putMetricData`
 
 ``` purescript
-putMetricData :: forall eff. Service -> PutMetricDataInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+putMetricData :: forall eff. Service -> PutMetricDataInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data points with the specified metric. If the specified metric does not exist, CloudWatch creates the metric. When CloudWatch creates a metric, it can take up to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>.</p> <p>Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST requests.</p> <p>Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, CloudWatch rejects values that are either too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10 dimensions per metric to further clarify what data the metric collects. For more information about specifying dimensions, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with time stamps from 24 hours ago or longer can take at least 48 hours to become available for <a>GetMetricStatistics</a> from the time they are submitted.</p> <p>CloudWatch needs raw data points to calculate percentile statistics. If you publish data using a statistic set instead, you can only retrieve percentile statistics for this data if one of the following conditions is true:</p> <ul> <li> <p>The SampleCount value of the statistic set is 1</p> </li> <li> <p>The Min and the Max values of the statistic set are equal</p> </li> </ul>
@@ -115,7 +115,7 @@ putMetricData :: forall eff. Service -> PutMetricDataInput -> Aff (exception :: 
 #### `setAlarmState`
 
 ``` purescript
-setAlarmState :: forall eff. Service -> SetAlarmStateInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+setAlarmState :: forall eff. Service -> SetAlarmStateInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Temporarily sets the state of an alarm for testing purposes. When the updated state differs from the previous value, the action configured for the appropriate state is invoked. For example, if your alarm is configured to send an Amazon SNS message when an alarm is triggered, temporarily changing the alarm state to <code>ALARM</code> sends an SNS message. The alarm returns to its actual state (often within seconds). Because the alarm state change happens quickly, it is typically only visible in the alarm's <b>History</b> tab in the Amazon CloudWatch console or through <a>DescribeAlarmHistory</a>.</p>

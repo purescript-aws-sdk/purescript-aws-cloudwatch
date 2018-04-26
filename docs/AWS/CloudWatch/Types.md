@@ -74,7 +74,7 @@ Encode AlarmDescription
 
 ``` purescript
 newtype AlarmHistoryItem
-  = AlarmHistoryItem { "AlarmName" :: NullOrUndefined (AlarmName), "Timestamp" :: NullOrUndefined (Timestamp), "HistoryItemType" :: NullOrUndefined (HistoryItemType), "HistorySummary" :: NullOrUndefined (HistorySummary), "HistoryData" :: NullOrUndefined (HistoryData) }
+  = AlarmHistoryItem { "AlarmName" :: Maybe (AlarmName), "Timestamp" :: Maybe (Timestamp), "HistoryItemType" :: Maybe (HistoryItemType), "HistorySummary" :: Maybe (HistorySummary), "HistoryData" :: Maybe (HistoryData) }
 ```
 
 <p>Represents the history of a specific alarm.</p>
@@ -99,7 +99,7 @@ Constructs AlarmHistoryItem from required parameters
 #### `newAlarmHistoryItem'`
 
 ``` purescript
-newAlarmHistoryItem' :: ({ "AlarmName" :: NullOrUndefined (AlarmName), "Timestamp" :: NullOrUndefined (Timestamp), "HistoryItemType" :: NullOrUndefined (HistoryItemType), "HistorySummary" :: NullOrUndefined (HistorySummary), "HistoryData" :: NullOrUndefined (HistoryData) } -> { "AlarmName" :: NullOrUndefined (AlarmName), "Timestamp" :: NullOrUndefined (Timestamp), "HistoryItemType" :: NullOrUndefined (HistoryItemType), "HistorySummary" :: NullOrUndefined (HistorySummary), "HistoryData" :: NullOrUndefined (HistoryData) }) -> AlarmHistoryItem
+newAlarmHistoryItem' :: ({ "AlarmName" :: Maybe (AlarmName), "Timestamp" :: Maybe (Timestamp), "HistoryItemType" :: Maybe (HistoryItemType), "HistorySummary" :: Maybe (HistorySummary), "HistoryData" :: Maybe (HistoryData) } -> { "AlarmName" :: Maybe (AlarmName), "Timestamp" :: Maybe (Timestamp), "HistoryItemType" :: Maybe (HistoryItemType), "HistorySummary" :: Maybe (HistorySummary), "HistoryData" :: Maybe (HistoryData) }) -> AlarmHistoryItem
 ```
 
 Constructs AlarmHistoryItem's fields from required parameters
@@ -252,7 +252,7 @@ Encode DashboardEntries
 
 ``` purescript
 newtype DashboardEntry
-  = DashboardEntry { "DashboardName" :: NullOrUndefined (DashboardName), "DashboardArn" :: NullOrUndefined (DashboardArn), "LastModified" :: NullOrUndefined (LastModified), "Size" :: NullOrUndefined (Size) }
+  = DashboardEntry { "DashboardName" :: Maybe (DashboardName), "DashboardArn" :: Maybe (DashboardArn), "LastModified" :: Maybe (LastModified), "Size" :: Maybe (Size) }
 ```
 
 <p>Represents a specific dashboard.</p>
@@ -277,7 +277,7 @@ Constructs DashboardEntry from required parameters
 #### `newDashboardEntry'`
 
 ``` purescript
-newDashboardEntry' :: ({ "DashboardName" :: NullOrUndefined (DashboardName), "DashboardArn" :: NullOrUndefined (DashboardArn), "LastModified" :: NullOrUndefined (LastModified), "Size" :: NullOrUndefined (Size) } -> { "DashboardName" :: NullOrUndefined (DashboardName), "DashboardArn" :: NullOrUndefined (DashboardArn), "LastModified" :: NullOrUndefined (LastModified), "Size" :: NullOrUndefined (Size) }) -> DashboardEntry
+newDashboardEntry' :: ({ "DashboardName" :: Maybe (DashboardName), "DashboardArn" :: Maybe (DashboardArn), "LastModified" :: Maybe (LastModified), "Size" :: Maybe (Size) } -> { "DashboardName" :: Maybe (DashboardName), "DashboardArn" :: Maybe (DashboardArn), "LastModified" :: Maybe (LastModified), "Size" :: Maybe (Size) }) -> DashboardEntry
 ```
 
 Constructs DashboardEntry's fields from required parameters
@@ -302,7 +302,7 @@ Encode DashboardErrorMessage
 
 ``` purescript
 newtype DashboardInvalidInputError
-  = DashboardInvalidInputError { message :: NullOrUndefined (DashboardErrorMessage), dashboardValidationMessages :: NullOrUndefined (DashboardValidationMessages) }
+  = DashboardInvalidInputError { message :: Maybe (DashboardErrorMessage), dashboardValidationMessages :: Maybe (DashboardValidationMessages) }
 ```
 
 <p>Some part of the dashboard data is invalid.</p>
@@ -327,7 +327,7 @@ Constructs DashboardInvalidInputError from required parameters
 #### `newDashboardInvalidInputError'`
 
 ``` purescript
-newDashboardInvalidInputError' :: ({ message :: NullOrUndefined (DashboardErrorMessage), dashboardValidationMessages :: NullOrUndefined (DashboardValidationMessages) } -> { message :: NullOrUndefined (DashboardErrorMessage), dashboardValidationMessages :: NullOrUndefined (DashboardValidationMessages) }) -> DashboardInvalidInputError
+newDashboardInvalidInputError' :: ({ message :: Maybe (DashboardErrorMessage), dashboardValidationMessages :: Maybe (DashboardValidationMessages) } -> { message :: Maybe (DashboardErrorMessage), dashboardValidationMessages :: Maybe (DashboardValidationMessages) }) -> DashboardInvalidInputError
 ```
 
 Constructs DashboardInvalidInputError's fields from required parameters
@@ -384,7 +384,7 @@ Encode DashboardNames
 
 ``` purescript
 newtype DashboardNotFoundError
-  = DashboardNotFoundError { message :: NullOrUndefined (DashboardErrorMessage) }
+  = DashboardNotFoundError { message :: Maybe (DashboardErrorMessage) }
 ```
 
 <p>The specified dashboard does not exist.</p>
@@ -409,7 +409,7 @@ Constructs DashboardNotFoundError from required parameters
 #### `newDashboardNotFoundError'`
 
 ``` purescript
-newDashboardNotFoundError' :: ({ message :: NullOrUndefined (DashboardErrorMessage) } -> { message :: NullOrUndefined (DashboardErrorMessage) }) -> DashboardNotFoundError
+newDashboardNotFoundError' :: ({ message :: Maybe (DashboardErrorMessage) } -> { message :: Maybe (DashboardErrorMessage) }) -> DashboardNotFoundError
 ```
 
 Constructs DashboardNotFoundError's fields from required parameters
@@ -418,7 +418,7 @@ Constructs DashboardNotFoundError's fields from required parameters
 
 ``` purescript
 newtype DashboardValidationMessage
-  = DashboardValidationMessage { "DataPath" :: NullOrUndefined (DataPath), "Message" :: NullOrUndefined (Message) }
+  = DashboardValidationMessage { "DataPath" :: Maybe (DataPath), "Message" :: Maybe (Message) }
 ```
 
 <p>An error or warning for the operation.</p>
@@ -443,7 +443,7 @@ Constructs DashboardValidationMessage from required parameters
 #### `newDashboardValidationMessage'`
 
 ``` purescript
-newDashboardValidationMessage' :: ({ "DataPath" :: NullOrUndefined (DataPath), "Message" :: NullOrUndefined (Message) } -> { "DataPath" :: NullOrUndefined (DataPath), "Message" :: NullOrUndefined (Message) }) -> DashboardValidationMessage
+newDashboardValidationMessage' :: ({ "DataPath" :: Maybe (DataPath), "Message" :: Maybe (Message) } -> { "DataPath" :: Maybe (DataPath), "Message" :: Maybe (Message) }) -> DashboardValidationMessage
 ```
 
 Constructs DashboardValidationMessage's fields from required parameters
@@ -484,7 +484,7 @@ Encode DataPath
 
 ``` purescript
 newtype Datapoint
-  = Datapoint { "Timestamp" :: NullOrUndefined (Timestamp), "SampleCount" :: NullOrUndefined (DatapointValue), "Average" :: NullOrUndefined (DatapointValue), "Sum" :: NullOrUndefined (DatapointValue), "Minimum" :: NullOrUndefined (DatapointValue), "Maximum" :: NullOrUndefined (DatapointValue), "Unit" :: NullOrUndefined (StandardUnit), "ExtendedStatistics" :: NullOrUndefined (DatapointValueMap) }
+  = Datapoint { "Timestamp" :: Maybe (Timestamp), "SampleCount" :: Maybe (DatapointValue), "Average" :: Maybe (DatapointValue), "Sum" :: Maybe (DatapointValue), "Minimum" :: Maybe (DatapointValue), "Maximum" :: Maybe (DatapointValue), "Unit" :: Maybe (StandardUnit), "ExtendedStatistics" :: Maybe (DatapointValueMap) }
 ```
 
 <p>Encapsulates the statistical data that CloudWatch computes from metric data.</p>
@@ -509,7 +509,7 @@ Constructs Datapoint from required parameters
 #### `newDatapoint'`
 
 ``` purescript
-newDatapoint' :: ({ "Timestamp" :: NullOrUndefined (Timestamp), "SampleCount" :: NullOrUndefined (DatapointValue), "Average" :: NullOrUndefined (DatapointValue), "Sum" :: NullOrUndefined (DatapointValue), "Minimum" :: NullOrUndefined (DatapointValue), "Maximum" :: NullOrUndefined (DatapointValue), "Unit" :: NullOrUndefined (StandardUnit), "ExtendedStatistics" :: NullOrUndefined (DatapointValueMap) } -> { "Timestamp" :: NullOrUndefined (Timestamp), "SampleCount" :: NullOrUndefined (DatapointValue), "Average" :: NullOrUndefined (DatapointValue), "Sum" :: NullOrUndefined (DatapointValue), "Minimum" :: NullOrUndefined (DatapointValue), "Maximum" :: NullOrUndefined (DatapointValue), "Unit" :: NullOrUndefined (StandardUnit), "ExtendedStatistics" :: NullOrUndefined (DatapointValueMap) }) -> Datapoint
+newDatapoint' :: ({ "Timestamp" :: Maybe (Timestamp), "SampleCount" :: Maybe (DatapointValue), "Average" :: Maybe (DatapointValue), "Sum" :: Maybe (DatapointValue), "Minimum" :: Maybe (DatapointValue), "Maximum" :: Maybe (DatapointValue), "Unit" :: Maybe (StandardUnit), "ExtendedStatistics" :: Maybe (DatapointValueMap) } -> { "Timestamp" :: Maybe (Timestamp), "SampleCount" :: Maybe (DatapointValue), "Average" :: Maybe (DatapointValue), "Sum" :: Maybe (DatapointValue), "Minimum" :: Maybe (DatapointValue), "Maximum" :: Maybe (DatapointValue), "Unit" :: Maybe (StandardUnit), "ExtendedStatistics" :: Maybe (DatapointValueMap) }) -> Datapoint
 ```
 
 Constructs Datapoint's fields from required parameters
@@ -662,7 +662,7 @@ Encode DeleteDashboardsOutput
 
 ``` purescript
 newtype DescribeAlarmHistoryInput
-  = DescribeAlarmHistoryInput { "AlarmName" :: NullOrUndefined (AlarmName), "HistoryItemType" :: NullOrUndefined (HistoryItemType), "StartDate" :: NullOrUndefined (Timestamp), "EndDate" :: NullOrUndefined (Timestamp), "MaxRecords" :: NullOrUndefined (MaxRecords), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeAlarmHistoryInput { "AlarmName" :: Maybe (AlarmName), "HistoryItemType" :: Maybe (HistoryItemType), "StartDate" :: Maybe (Timestamp), "EndDate" :: Maybe (Timestamp), "MaxRecords" :: Maybe (MaxRecords), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -685,7 +685,7 @@ Constructs DescribeAlarmHistoryInput from required parameters
 #### `newDescribeAlarmHistoryInput'`
 
 ``` purescript
-newDescribeAlarmHistoryInput' :: ({ "AlarmName" :: NullOrUndefined (AlarmName), "HistoryItemType" :: NullOrUndefined (HistoryItemType), "StartDate" :: NullOrUndefined (Timestamp), "EndDate" :: NullOrUndefined (Timestamp), "MaxRecords" :: NullOrUndefined (MaxRecords), "NextToken" :: NullOrUndefined (NextToken) } -> { "AlarmName" :: NullOrUndefined (AlarmName), "HistoryItemType" :: NullOrUndefined (HistoryItemType), "StartDate" :: NullOrUndefined (Timestamp), "EndDate" :: NullOrUndefined (Timestamp), "MaxRecords" :: NullOrUndefined (MaxRecords), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeAlarmHistoryInput
+newDescribeAlarmHistoryInput' :: ({ "AlarmName" :: Maybe (AlarmName), "HistoryItemType" :: Maybe (HistoryItemType), "StartDate" :: Maybe (Timestamp), "EndDate" :: Maybe (Timestamp), "MaxRecords" :: Maybe (MaxRecords), "NextToken" :: Maybe (NextToken) } -> { "AlarmName" :: Maybe (AlarmName), "HistoryItemType" :: Maybe (HistoryItemType), "StartDate" :: Maybe (Timestamp), "EndDate" :: Maybe (Timestamp), "MaxRecords" :: Maybe (MaxRecords), "NextToken" :: Maybe (NextToken) }) -> DescribeAlarmHistoryInput
 ```
 
 Constructs DescribeAlarmHistoryInput's fields from required parameters
@@ -694,7 +694,7 @@ Constructs DescribeAlarmHistoryInput's fields from required parameters
 
 ``` purescript
 newtype DescribeAlarmHistoryOutput
-  = DescribeAlarmHistoryOutput { "AlarmHistoryItems" :: NullOrUndefined (AlarmHistoryItems), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeAlarmHistoryOutput { "AlarmHistoryItems" :: Maybe (AlarmHistoryItems), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -717,7 +717,7 @@ Constructs DescribeAlarmHistoryOutput from required parameters
 #### `newDescribeAlarmHistoryOutput'`
 
 ``` purescript
-newDescribeAlarmHistoryOutput' :: ({ "AlarmHistoryItems" :: NullOrUndefined (AlarmHistoryItems), "NextToken" :: NullOrUndefined (NextToken) } -> { "AlarmHistoryItems" :: NullOrUndefined (AlarmHistoryItems), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeAlarmHistoryOutput
+newDescribeAlarmHistoryOutput' :: ({ "AlarmHistoryItems" :: Maybe (AlarmHistoryItems), "NextToken" :: Maybe (NextToken) } -> { "AlarmHistoryItems" :: Maybe (AlarmHistoryItems), "NextToken" :: Maybe (NextToken) }) -> DescribeAlarmHistoryOutput
 ```
 
 Constructs DescribeAlarmHistoryOutput's fields from required parameters
@@ -726,7 +726,7 @@ Constructs DescribeAlarmHistoryOutput's fields from required parameters
 
 ``` purescript
 newtype DescribeAlarmsForMetricInput
-  = DescribeAlarmsForMetricInput { "MetricName" :: MetricName, "Namespace" :: Namespace, "Statistic" :: NullOrUndefined (Statistic), "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic), "Dimensions" :: NullOrUndefined (Dimensions), "Period" :: NullOrUndefined (Period), "Unit" :: NullOrUndefined (StandardUnit) }
+  = DescribeAlarmsForMetricInput { "MetricName" :: MetricName, "Namespace" :: Namespace, "Statistic" :: Maybe (Statistic), "ExtendedStatistic" :: Maybe (ExtendedStatistic), "Dimensions" :: Maybe (Dimensions), "Period" :: Maybe (Period), "Unit" :: Maybe (StandardUnit) }
 ```
 
 ##### Instances
@@ -749,7 +749,7 @@ Constructs DescribeAlarmsForMetricInput from required parameters
 #### `newDescribeAlarmsForMetricInput'`
 
 ``` purescript
-newDescribeAlarmsForMetricInput' :: MetricName -> Namespace -> ({ "MetricName" :: MetricName, "Namespace" :: Namespace, "Statistic" :: NullOrUndefined (Statistic), "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic), "Dimensions" :: NullOrUndefined (Dimensions), "Period" :: NullOrUndefined (Period), "Unit" :: NullOrUndefined (StandardUnit) } -> { "MetricName" :: MetricName, "Namespace" :: Namespace, "Statistic" :: NullOrUndefined (Statistic), "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic), "Dimensions" :: NullOrUndefined (Dimensions), "Period" :: NullOrUndefined (Period), "Unit" :: NullOrUndefined (StandardUnit) }) -> DescribeAlarmsForMetricInput
+newDescribeAlarmsForMetricInput' :: MetricName -> Namespace -> ({ "MetricName" :: MetricName, "Namespace" :: Namespace, "Statistic" :: Maybe (Statistic), "ExtendedStatistic" :: Maybe (ExtendedStatistic), "Dimensions" :: Maybe (Dimensions), "Period" :: Maybe (Period), "Unit" :: Maybe (StandardUnit) } -> { "MetricName" :: MetricName, "Namespace" :: Namespace, "Statistic" :: Maybe (Statistic), "ExtendedStatistic" :: Maybe (ExtendedStatistic), "Dimensions" :: Maybe (Dimensions), "Period" :: Maybe (Period), "Unit" :: Maybe (StandardUnit) }) -> DescribeAlarmsForMetricInput
 ```
 
 Constructs DescribeAlarmsForMetricInput's fields from required parameters
@@ -758,7 +758,7 @@ Constructs DescribeAlarmsForMetricInput's fields from required parameters
 
 ``` purescript
 newtype DescribeAlarmsForMetricOutput
-  = DescribeAlarmsForMetricOutput { "MetricAlarms" :: NullOrUndefined (MetricAlarms) }
+  = DescribeAlarmsForMetricOutput { "MetricAlarms" :: Maybe (MetricAlarms) }
 ```
 
 ##### Instances
@@ -781,7 +781,7 @@ Constructs DescribeAlarmsForMetricOutput from required parameters
 #### `newDescribeAlarmsForMetricOutput'`
 
 ``` purescript
-newDescribeAlarmsForMetricOutput' :: ({ "MetricAlarms" :: NullOrUndefined (MetricAlarms) } -> { "MetricAlarms" :: NullOrUndefined (MetricAlarms) }) -> DescribeAlarmsForMetricOutput
+newDescribeAlarmsForMetricOutput' :: ({ "MetricAlarms" :: Maybe (MetricAlarms) } -> { "MetricAlarms" :: Maybe (MetricAlarms) }) -> DescribeAlarmsForMetricOutput
 ```
 
 Constructs DescribeAlarmsForMetricOutput's fields from required parameters
@@ -790,7 +790,7 @@ Constructs DescribeAlarmsForMetricOutput's fields from required parameters
 
 ``` purescript
 newtype DescribeAlarmsInput
-  = DescribeAlarmsInput { "AlarmNames" :: NullOrUndefined (AlarmNames), "AlarmNamePrefix" :: NullOrUndefined (AlarmNamePrefix), "StateValue" :: NullOrUndefined (StateValue), "ActionPrefix" :: NullOrUndefined (ActionPrefix), "MaxRecords" :: NullOrUndefined (MaxRecords), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeAlarmsInput { "AlarmNames" :: Maybe (AlarmNames), "AlarmNamePrefix" :: Maybe (AlarmNamePrefix), "StateValue" :: Maybe (StateValue), "ActionPrefix" :: Maybe (ActionPrefix), "MaxRecords" :: Maybe (MaxRecords), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -813,7 +813,7 @@ Constructs DescribeAlarmsInput from required parameters
 #### `newDescribeAlarmsInput'`
 
 ``` purescript
-newDescribeAlarmsInput' :: ({ "AlarmNames" :: NullOrUndefined (AlarmNames), "AlarmNamePrefix" :: NullOrUndefined (AlarmNamePrefix), "StateValue" :: NullOrUndefined (StateValue), "ActionPrefix" :: NullOrUndefined (ActionPrefix), "MaxRecords" :: NullOrUndefined (MaxRecords), "NextToken" :: NullOrUndefined (NextToken) } -> { "AlarmNames" :: NullOrUndefined (AlarmNames), "AlarmNamePrefix" :: NullOrUndefined (AlarmNamePrefix), "StateValue" :: NullOrUndefined (StateValue), "ActionPrefix" :: NullOrUndefined (ActionPrefix), "MaxRecords" :: NullOrUndefined (MaxRecords), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeAlarmsInput
+newDescribeAlarmsInput' :: ({ "AlarmNames" :: Maybe (AlarmNames), "AlarmNamePrefix" :: Maybe (AlarmNamePrefix), "StateValue" :: Maybe (StateValue), "ActionPrefix" :: Maybe (ActionPrefix), "MaxRecords" :: Maybe (MaxRecords), "NextToken" :: Maybe (NextToken) } -> { "AlarmNames" :: Maybe (AlarmNames), "AlarmNamePrefix" :: Maybe (AlarmNamePrefix), "StateValue" :: Maybe (StateValue), "ActionPrefix" :: Maybe (ActionPrefix), "MaxRecords" :: Maybe (MaxRecords), "NextToken" :: Maybe (NextToken) }) -> DescribeAlarmsInput
 ```
 
 Constructs DescribeAlarmsInput's fields from required parameters
@@ -822,7 +822,7 @@ Constructs DescribeAlarmsInput's fields from required parameters
 
 ``` purescript
 newtype DescribeAlarmsOutput
-  = DescribeAlarmsOutput { "MetricAlarms" :: NullOrUndefined (MetricAlarms), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeAlarmsOutput { "MetricAlarms" :: Maybe (MetricAlarms), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -845,7 +845,7 @@ Constructs DescribeAlarmsOutput from required parameters
 #### `newDescribeAlarmsOutput'`
 
 ``` purescript
-newDescribeAlarmsOutput' :: ({ "MetricAlarms" :: NullOrUndefined (MetricAlarms), "NextToken" :: NullOrUndefined (NextToken) } -> { "MetricAlarms" :: NullOrUndefined (MetricAlarms), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeAlarmsOutput
+newDescribeAlarmsOutput' :: ({ "MetricAlarms" :: Maybe (MetricAlarms), "NextToken" :: Maybe (NextToken) } -> { "MetricAlarms" :: Maybe (MetricAlarms), "NextToken" :: Maybe (NextToken) }) -> DescribeAlarmsOutput
 ```
 
 Constructs DescribeAlarmsOutput's fields from required parameters
@@ -888,7 +888,7 @@ Constructs Dimension's fields from required parameters
 
 ``` purescript
 newtype DimensionFilter
-  = DimensionFilter { "Name" :: DimensionName, "Value" :: NullOrUndefined (DimensionValue) }
+  = DimensionFilter { "Name" :: DimensionName, "Value" :: Maybe (DimensionValue) }
 ```
 
 <p>Represents filters for a dimension.</p>
@@ -913,7 +913,7 @@ Constructs DimensionFilter from required parameters
 #### `newDimensionFilter'`
 
 ``` purescript
-newDimensionFilter' :: DimensionName -> ({ "Name" :: DimensionName, "Value" :: NullOrUndefined (DimensionValue) } -> { "Name" :: DimensionName, "Value" :: NullOrUndefined (DimensionValue) }) -> DimensionFilter
+newDimensionFilter' :: DimensionName -> ({ "Name" :: DimensionName, "Value" :: Maybe (DimensionValue) } -> { "Name" :: DimensionName, "Value" :: Maybe (DimensionValue) }) -> DimensionFilter
 ```
 
 Constructs DimensionFilter's fields from required parameters
@@ -1178,7 +1178,7 @@ Constructs GetDashboardInput's fields from required parameters
 
 ``` purescript
 newtype GetDashboardOutput
-  = GetDashboardOutput { "DashboardArn" :: NullOrUndefined (DashboardArn), "DashboardBody" :: NullOrUndefined (DashboardBody), "DashboardName" :: NullOrUndefined (DashboardName) }
+  = GetDashboardOutput { "DashboardArn" :: Maybe (DashboardArn), "DashboardBody" :: Maybe (DashboardBody), "DashboardName" :: Maybe (DashboardName) }
 ```
 
 ##### Instances
@@ -1201,7 +1201,7 @@ Constructs GetDashboardOutput from required parameters
 #### `newGetDashboardOutput'`
 
 ``` purescript
-newGetDashboardOutput' :: ({ "DashboardArn" :: NullOrUndefined (DashboardArn), "DashboardBody" :: NullOrUndefined (DashboardBody), "DashboardName" :: NullOrUndefined (DashboardName) } -> { "DashboardArn" :: NullOrUndefined (DashboardArn), "DashboardBody" :: NullOrUndefined (DashboardBody), "DashboardName" :: NullOrUndefined (DashboardName) }) -> GetDashboardOutput
+newGetDashboardOutput' :: ({ "DashboardArn" :: Maybe (DashboardArn), "DashboardBody" :: Maybe (DashboardBody), "DashboardName" :: Maybe (DashboardName) } -> { "DashboardArn" :: Maybe (DashboardArn), "DashboardBody" :: Maybe (DashboardBody), "DashboardName" :: Maybe (DashboardName) }) -> GetDashboardOutput
 ```
 
 Constructs GetDashboardOutput's fields from required parameters
@@ -1210,7 +1210,7 @@ Constructs GetDashboardOutput's fields from required parameters
 
 ``` purescript
 newtype GetMetricStatisticsInput
-  = GetMetricStatisticsInput { "Namespace" :: Namespace, "MetricName" :: MetricName, "Dimensions" :: NullOrUndefined (Dimensions), "StartTime" :: Timestamp, "EndTime" :: Timestamp, "Period" :: Period, "Statistics" :: NullOrUndefined (Statistics), "ExtendedStatistics" :: NullOrUndefined (ExtendedStatistics), "Unit" :: NullOrUndefined (StandardUnit) }
+  = GetMetricStatisticsInput { "Namespace" :: Namespace, "MetricName" :: MetricName, "Dimensions" :: Maybe (Dimensions), "StartTime" :: Timestamp, "EndTime" :: Timestamp, "Period" :: Period, "Statistics" :: Maybe (Statistics), "ExtendedStatistics" :: Maybe (ExtendedStatistics), "Unit" :: Maybe (StandardUnit) }
 ```
 
 ##### Instances
@@ -1233,7 +1233,7 @@ Constructs GetMetricStatisticsInput from required parameters
 #### `newGetMetricStatisticsInput'`
 
 ``` purescript
-newGetMetricStatisticsInput' :: Timestamp -> MetricName -> Namespace -> Period -> Timestamp -> ({ "Namespace" :: Namespace, "MetricName" :: MetricName, "Dimensions" :: NullOrUndefined (Dimensions), "StartTime" :: Timestamp, "EndTime" :: Timestamp, "Period" :: Period, "Statistics" :: NullOrUndefined (Statistics), "ExtendedStatistics" :: NullOrUndefined (ExtendedStatistics), "Unit" :: NullOrUndefined (StandardUnit) } -> { "Namespace" :: Namespace, "MetricName" :: MetricName, "Dimensions" :: NullOrUndefined (Dimensions), "StartTime" :: Timestamp, "EndTime" :: Timestamp, "Period" :: Period, "Statistics" :: NullOrUndefined (Statistics), "ExtendedStatistics" :: NullOrUndefined (ExtendedStatistics), "Unit" :: NullOrUndefined (StandardUnit) }) -> GetMetricStatisticsInput
+newGetMetricStatisticsInput' :: Timestamp -> MetricName -> Namespace -> Period -> Timestamp -> ({ "Namespace" :: Namespace, "MetricName" :: MetricName, "Dimensions" :: Maybe (Dimensions), "StartTime" :: Timestamp, "EndTime" :: Timestamp, "Period" :: Period, "Statistics" :: Maybe (Statistics), "ExtendedStatistics" :: Maybe (ExtendedStatistics), "Unit" :: Maybe (StandardUnit) } -> { "Namespace" :: Namespace, "MetricName" :: MetricName, "Dimensions" :: Maybe (Dimensions), "StartTime" :: Timestamp, "EndTime" :: Timestamp, "Period" :: Period, "Statistics" :: Maybe (Statistics), "ExtendedStatistics" :: Maybe (ExtendedStatistics), "Unit" :: Maybe (StandardUnit) }) -> GetMetricStatisticsInput
 ```
 
 Constructs GetMetricStatisticsInput's fields from required parameters
@@ -1242,7 +1242,7 @@ Constructs GetMetricStatisticsInput's fields from required parameters
 
 ``` purescript
 newtype GetMetricStatisticsOutput
-  = GetMetricStatisticsOutput { "Label" :: NullOrUndefined (MetricLabel), "Datapoints" :: NullOrUndefined (Datapoints) }
+  = GetMetricStatisticsOutput { "Label" :: Maybe (MetricLabel), "Datapoints" :: Maybe (Datapoints) }
 ```
 
 ##### Instances
@@ -1265,7 +1265,7 @@ Constructs GetMetricStatisticsOutput from required parameters
 #### `newGetMetricStatisticsOutput'`
 
 ``` purescript
-newGetMetricStatisticsOutput' :: ({ "Label" :: NullOrUndefined (MetricLabel), "Datapoints" :: NullOrUndefined (Datapoints) } -> { "Label" :: NullOrUndefined (MetricLabel), "Datapoints" :: NullOrUndefined (Datapoints) }) -> GetMetricStatisticsOutput
+newGetMetricStatisticsOutput' :: ({ "Label" :: Maybe (MetricLabel), "Datapoints" :: Maybe (Datapoints) } -> { "Label" :: Maybe (MetricLabel), "Datapoints" :: Maybe (Datapoints) }) -> GetMetricStatisticsOutput
 ```
 
 Constructs GetMetricStatisticsOutput's fields from required parameters
@@ -1322,7 +1322,7 @@ Encode HistorySummary
 
 ``` purescript
 newtype InternalServiceFault
-  = InternalServiceFault { "Message" :: NullOrUndefined (FaultDescription) }
+  = InternalServiceFault { "Message" :: Maybe (FaultDescription) }
 ```
 
 <p>Request processing has failed due to some unknown error, exception, or failure.</p>
@@ -1347,7 +1347,7 @@ Constructs InternalServiceFault from required parameters
 #### `newInternalServiceFault'`
 
 ``` purescript
-newInternalServiceFault' :: ({ "Message" :: NullOrUndefined (FaultDescription) } -> { "Message" :: NullOrUndefined (FaultDescription) }) -> InternalServiceFault
+newInternalServiceFault' :: ({ "Message" :: Maybe (FaultDescription) } -> { "Message" :: Maybe (FaultDescription) }) -> InternalServiceFault
 ```
 
 Constructs InternalServiceFault's fields from required parameters
@@ -1356,7 +1356,7 @@ Constructs InternalServiceFault's fields from required parameters
 
 ``` purescript
 newtype InvalidFormatFault
-  = InvalidFormatFault { message :: NullOrUndefined (ErrorMessage) }
+  = InvalidFormatFault { message :: Maybe (ErrorMessage) }
 ```
 
 <p>Data was not syntactically valid JSON.</p>
@@ -1381,7 +1381,7 @@ Constructs InvalidFormatFault from required parameters
 #### `newInvalidFormatFault'`
 
 ``` purescript
-newInvalidFormatFault' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> InvalidFormatFault
+newInvalidFormatFault' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> InvalidFormatFault
 ```
 
 Constructs InvalidFormatFault's fields from required parameters
@@ -1390,7 +1390,7 @@ Constructs InvalidFormatFault's fields from required parameters
 
 ``` purescript
 newtype InvalidNextToken
-  = InvalidNextToken { message :: NullOrUndefined (ErrorMessage) }
+  = InvalidNextToken { message :: Maybe (ErrorMessage) }
 ```
 
 <p>The next token specified is invalid.</p>
@@ -1415,7 +1415,7 @@ Constructs InvalidNextToken from required parameters
 #### `newInvalidNextToken'`
 
 ``` purescript
-newInvalidNextToken' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> InvalidNextToken
+newInvalidNextToken' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> InvalidNextToken
 ```
 
 Constructs InvalidNextToken's fields from required parameters
@@ -1424,7 +1424,7 @@ Constructs InvalidNextToken's fields from required parameters
 
 ``` purescript
 newtype InvalidParameterCombinationException
-  = InvalidParameterCombinationException { message :: NullOrUndefined (AwsQueryErrorMessage) }
+  = InvalidParameterCombinationException { message :: Maybe (AwsQueryErrorMessage) }
 ```
 
 <p>Parameters were used together that cannot be used together.</p>
@@ -1449,7 +1449,7 @@ Constructs InvalidParameterCombinationException from required parameters
 #### `newInvalidParameterCombinationException'`
 
 ``` purescript
-newInvalidParameterCombinationException' :: ({ message :: NullOrUndefined (AwsQueryErrorMessage) } -> { message :: NullOrUndefined (AwsQueryErrorMessage) }) -> InvalidParameterCombinationException
+newInvalidParameterCombinationException' :: ({ message :: Maybe (AwsQueryErrorMessage) } -> { message :: Maybe (AwsQueryErrorMessage) }) -> InvalidParameterCombinationException
 ```
 
 Constructs InvalidParameterCombinationException's fields from required parameters
@@ -1458,7 +1458,7 @@ Constructs InvalidParameterCombinationException's fields from required parameter
 
 ``` purescript
 newtype InvalidParameterValueException
-  = InvalidParameterValueException { message :: NullOrUndefined (AwsQueryErrorMessage) }
+  = InvalidParameterValueException { message :: Maybe (AwsQueryErrorMessage) }
 ```
 
 <p>The value of an input parameter is bad or out-of-range.</p>
@@ -1483,7 +1483,7 @@ Constructs InvalidParameterValueException from required parameters
 #### `newInvalidParameterValueException'`
 
 ``` purescript
-newInvalidParameterValueException' :: ({ message :: NullOrUndefined (AwsQueryErrorMessage) } -> { message :: NullOrUndefined (AwsQueryErrorMessage) }) -> InvalidParameterValueException
+newInvalidParameterValueException' :: ({ message :: Maybe (AwsQueryErrorMessage) } -> { message :: Maybe (AwsQueryErrorMessage) }) -> InvalidParameterValueException
 ```
 
 Constructs InvalidParameterValueException's fields from required parameters
@@ -1508,7 +1508,7 @@ Encode LastModified
 
 ``` purescript
 newtype LimitExceededFault
-  = LimitExceededFault { message :: NullOrUndefined (ErrorMessage) }
+  = LimitExceededFault { message :: Maybe (ErrorMessage) }
 ```
 
 <p>The quota for alarms for this customer has already been reached.</p>
@@ -1533,7 +1533,7 @@ Constructs LimitExceededFault from required parameters
 #### `newLimitExceededFault'`
 
 ``` purescript
-newLimitExceededFault' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> LimitExceededFault
+newLimitExceededFault' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> LimitExceededFault
 ```
 
 Constructs LimitExceededFault's fields from required parameters
@@ -1542,7 +1542,7 @@ Constructs LimitExceededFault's fields from required parameters
 
 ``` purescript
 newtype ListDashboardsInput
-  = ListDashboardsInput { "DashboardNamePrefix" :: NullOrUndefined (DashboardNamePrefix), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListDashboardsInput { "DashboardNamePrefix" :: Maybe (DashboardNamePrefix), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -1565,7 +1565,7 @@ Constructs ListDashboardsInput from required parameters
 #### `newListDashboardsInput'`
 
 ``` purescript
-newListDashboardsInput' :: ({ "DashboardNamePrefix" :: NullOrUndefined (DashboardNamePrefix), "NextToken" :: NullOrUndefined (NextToken) } -> { "DashboardNamePrefix" :: NullOrUndefined (DashboardNamePrefix), "NextToken" :: NullOrUndefined (NextToken) }) -> ListDashboardsInput
+newListDashboardsInput' :: ({ "DashboardNamePrefix" :: Maybe (DashboardNamePrefix), "NextToken" :: Maybe (NextToken) } -> { "DashboardNamePrefix" :: Maybe (DashboardNamePrefix), "NextToken" :: Maybe (NextToken) }) -> ListDashboardsInput
 ```
 
 Constructs ListDashboardsInput's fields from required parameters
@@ -1574,7 +1574,7 @@ Constructs ListDashboardsInput's fields from required parameters
 
 ``` purescript
 newtype ListDashboardsOutput
-  = ListDashboardsOutput { "DashboardEntries" :: NullOrUndefined (DashboardEntries), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListDashboardsOutput { "DashboardEntries" :: Maybe (DashboardEntries), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -1597,7 +1597,7 @@ Constructs ListDashboardsOutput from required parameters
 #### `newListDashboardsOutput'`
 
 ``` purescript
-newListDashboardsOutput' :: ({ "DashboardEntries" :: NullOrUndefined (DashboardEntries), "NextToken" :: NullOrUndefined (NextToken) } -> { "DashboardEntries" :: NullOrUndefined (DashboardEntries), "NextToken" :: NullOrUndefined (NextToken) }) -> ListDashboardsOutput
+newListDashboardsOutput' :: ({ "DashboardEntries" :: Maybe (DashboardEntries), "NextToken" :: Maybe (NextToken) } -> { "DashboardEntries" :: Maybe (DashboardEntries), "NextToken" :: Maybe (NextToken) }) -> ListDashboardsOutput
 ```
 
 Constructs ListDashboardsOutput's fields from required parameters
@@ -1606,7 +1606,7 @@ Constructs ListDashboardsOutput's fields from required parameters
 
 ``` purescript
 newtype ListMetricsInput
-  = ListMetricsInput { "Namespace" :: NullOrUndefined (Namespace), "MetricName" :: NullOrUndefined (MetricName), "Dimensions" :: NullOrUndefined (DimensionFilters), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListMetricsInput { "Namespace" :: Maybe (Namespace), "MetricName" :: Maybe (MetricName), "Dimensions" :: Maybe (DimensionFilters), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -1629,7 +1629,7 @@ Constructs ListMetricsInput from required parameters
 #### `newListMetricsInput'`
 
 ``` purescript
-newListMetricsInput' :: ({ "Namespace" :: NullOrUndefined (Namespace), "MetricName" :: NullOrUndefined (MetricName), "Dimensions" :: NullOrUndefined (DimensionFilters), "NextToken" :: NullOrUndefined (NextToken) } -> { "Namespace" :: NullOrUndefined (Namespace), "MetricName" :: NullOrUndefined (MetricName), "Dimensions" :: NullOrUndefined (DimensionFilters), "NextToken" :: NullOrUndefined (NextToken) }) -> ListMetricsInput
+newListMetricsInput' :: ({ "Namespace" :: Maybe (Namespace), "MetricName" :: Maybe (MetricName), "Dimensions" :: Maybe (DimensionFilters), "NextToken" :: Maybe (NextToken) } -> { "Namespace" :: Maybe (Namespace), "MetricName" :: Maybe (MetricName), "Dimensions" :: Maybe (DimensionFilters), "NextToken" :: Maybe (NextToken) }) -> ListMetricsInput
 ```
 
 Constructs ListMetricsInput's fields from required parameters
@@ -1638,7 +1638,7 @@ Constructs ListMetricsInput's fields from required parameters
 
 ``` purescript
 newtype ListMetricsOutput
-  = ListMetricsOutput { "Metrics" :: NullOrUndefined (Metrics), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListMetricsOutput { "Metrics" :: Maybe (Metrics), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -1661,7 +1661,7 @@ Constructs ListMetricsOutput from required parameters
 #### `newListMetricsOutput'`
 
 ``` purescript
-newListMetricsOutput' :: ({ "Metrics" :: NullOrUndefined (Metrics), "NextToken" :: NullOrUndefined (NextToken) } -> { "Metrics" :: NullOrUndefined (Metrics), "NextToken" :: NullOrUndefined (NextToken) }) -> ListMetricsOutput
+newListMetricsOutput' :: ({ "Metrics" :: Maybe (Metrics), "NextToken" :: Maybe (NextToken) } -> { "Metrics" :: Maybe (Metrics), "NextToken" :: Maybe (NextToken) }) -> ListMetricsOutput
 ```
 
 Constructs ListMetricsOutput's fields from required parameters
@@ -1702,7 +1702,7 @@ Encode Message
 
 ``` purescript
 newtype Metric
-  = Metric { "Namespace" :: NullOrUndefined (Namespace), "MetricName" :: NullOrUndefined (MetricName), "Dimensions" :: NullOrUndefined (Dimensions) }
+  = Metric { "Namespace" :: Maybe (Namespace), "MetricName" :: Maybe (MetricName), "Dimensions" :: Maybe (Dimensions) }
 ```
 
 <p>Represents a specific metric.</p>
@@ -1727,7 +1727,7 @@ Constructs Metric from required parameters
 #### `newMetric'`
 
 ``` purescript
-newMetric' :: ({ "Namespace" :: NullOrUndefined (Namespace), "MetricName" :: NullOrUndefined (MetricName), "Dimensions" :: NullOrUndefined (Dimensions) } -> { "Namespace" :: NullOrUndefined (Namespace), "MetricName" :: NullOrUndefined (MetricName), "Dimensions" :: NullOrUndefined (Dimensions) }) -> Metric
+newMetric' :: ({ "Namespace" :: Maybe (Namespace), "MetricName" :: Maybe (MetricName), "Dimensions" :: Maybe (Dimensions) } -> { "Namespace" :: Maybe (Namespace), "MetricName" :: Maybe (MetricName), "Dimensions" :: Maybe (Dimensions) }) -> Metric
 ```
 
 Constructs Metric's fields from required parameters
@@ -1736,7 +1736,7 @@ Constructs Metric's fields from required parameters
 
 ``` purescript
 newtype MetricAlarm
-  = MetricAlarm { "AlarmName" :: NullOrUndefined (AlarmName), "AlarmArn" :: NullOrUndefined (AlarmArn), "AlarmDescription" :: NullOrUndefined (AlarmDescription), "AlarmConfigurationUpdatedTimestamp" :: NullOrUndefined (Timestamp), "ActionsEnabled" :: NullOrUndefined (ActionsEnabled), "OKActions" :: NullOrUndefined (ResourceList), "AlarmActions" :: NullOrUndefined (ResourceList), "InsufficientDataActions" :: NullOrUndefined (ResourceList), "StateValue" :: NullOrUndefined (StateValue), "StateReason" :: NullOrUndefined (StateReason), "StateReasonData" :: NullOrUndefined (StateReasonData), "StateUpdatedTimestamp" :: NullOrUndefined (Timestamp), "MetricName" :: NullOrUndefined (MetricName), "Namespace" :: NullOrUndefined (Namespace), "Statistic" :: NullOrUndefined (Statistic), "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic), "Dimensions" :: NullOrUndefined (Dimensions), "Period" :: NullOrUndefined (Period), "Unit" :: NullOrUndefined (StandardUnit), "EvaluationPeriods" :: NullOrUndefined (EvaluationPeriods), "DatapointsToAlarm" :: NullOrUndefined (DatapointsToAlarm), "Threshold" :: NullOrUndefined (Threshold), "ComparisonOperator" :: NullOrUndefined (ComparisonOperator), "TreatMissingData" :: NullOrUndefined (TreatMissingData), "EvaluateLowSampleCountPercentile" :: NullOrUndefined (EvaluateLowSampleCountPercentile) }
+  = MetricAlarm { "AlarmName" :: Maybe (AlarmName), "AlarmArn" :: Maybe (AlarmArn), "AlarmDescription" :: Maybe (AlarmDescription), "AlarmConfigurationUpdatedTimestamp" :: Maybe (Timestamp), "ActionsEnabled" :: Maybe (ActionsEnabled), "OKActions" :: Maybe (ResourceList), "AlarmActions" :: Maybe (ResourceList), "InsufficientDataActions" :: Maybe (ResourceList), "StateValue" :: Maybe (StateValue), "StateReason" :: Maybe (StateReason), "StateReasonData" :: Maybe (StateReasonData), "StateUpdatedTimestamp" :: Maybe (Timestamp), "MetricName" :: Maybe (MetricName), "Namespace" :: Maybe (Namespace), "Statistic" :: Maybe (Statistic), "ExtendedStatistic" :: Maybe (ExtendedStatistic), "Dimensions" :: Maybe (Dimensions), "Period" :: Maybe (Period), "Unit" :: Maybe (StandardUnit), "EvaluationPeriods" :: Maybe (EvaluationPeriods), "DatapointsToAlarm" :: Maybe (DatapointsToAlarm), "Threshold" :: Maybe (Threshold), "ComparisonOperator" :: Maybe (ComparisonOperator), "TreatMissingData" :: Maybe (TreatMissingData), "EvaluateLowSampleCountPercentile" :: Maybe (EvaluateLowSampleCountPercentile) }
 ```
 
 <p>Represents an alarm.</p>
@@ -1761,7 +1761,7 @@ Constructs MetricAlarm from required parameters
 #### `newMetricAlarm'`
 
 ``` purescript
-newMetricAlarm' :: ({ "AlarmName" :: NullOrUndefined (AlarmName), "AlarmArn" :: NullOrUndefined (AlarmArn), "AlarmDescription" :: NullOrUndefined (AlarmDescription), "AlarmConfigurationUpdatedTimestamp" :: NullOrUndefined (Timestamp), "ActionsEnabled" :: NullOrUndefined (ActionsEnabled), "OKActions" :: NullOrUndefined (ResourceList), "AlarmActions" :: NullOrUndefined (ResourceList), "InsufficientDataActions" :: NullOrUndefined (ResourceList), "StateValue" :: NullOrUndefined (StateValue), "StateReason" :: NullOrUndefined (StateReason), "StateReasonData" :: NullOrUndefined (StateReasonData), "StateUpdatedTimestamp" :: NullOrUndefined (Timestamp), "MetricName" :: NullOrUndefined (MetricName), "Namespace" :: NullOrUndefined (Namespace), "Statistic" :: NullOrUndefined (Statistic), "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic), "Dimensions" :: NullOrUndefined (Dimensions), "Period" :: NullOrUndefined (Period), "Unit" :: NullOrUndefined (StandardUnit), "EvaluationPeriods" :: NullOrUndefined (EvaluationPeriods), "DatapointsToAlarm" :: NullOrUndefined (DatapointsToAlarm), "Threshold" :: NullOrUndefined (Threshold), "ComparisonOperator" :: NullOrUndefined (ComparisonOperator), "TreatMissingData" :: NullOrUndefined (TreatMissingData), "EvaluateLowSampleCountPercentile" :: NullOrUndefined (EvaluateLowSampleCountPercentile) } -> { "AlarmName" :: NullOrUndefined (AlarmName), "AlarmArn" :: NullOrUndefined (AlarmArn), "AlarmDescription" :: NullOrUndefined (AlarmDescription), "AlarmConfigurationUpdatedTimestamp" :: NullOrUndefined (Timestamp), "ActionsEnabled" :: NullOrUndefined (ActionsEnabled), "OKActions" :: NullOrUndefined (ResourceList), "AlarmActions" :: NullOrUndefined (ResourceList), "InsufficientDataActions" :: NullOrUndefined (ResourceList), "StateValue" :: NullOrUndefined (StateValue), "StateReason" :: NullOrUndefined (StateReason), "StateReasonData" :: NullOrUndefined (StateReasonData), "StateUpdatedTimestamp" :: NullOrUndefined (Timestamp), "MetricName" :: NullOrUndefined (MetricName), "Namespace" :: NullOrUndefined (Namespace), "Statistic" :: NullOrUndefined (Statistic), "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic), "Dimensions" :: NullOrUndefined (Dimensions), "Period" :: NullOrUndefined (Period), "Unit" :: NullOrUndefined (StandardUnit), "EvaluationPeriods" :: NullOrUndefined (EvaluationPeriods), "DatapointsToAlarm" :: NullOrUndefined (DatapointsToAlarm), "Threshold" :: NullOrUndefined (Threshold), "ComparisonOperator" :: NullOrUndefined (ComparisonOperator), "TreatMissingData" :: NullOrUndefined (TreatMissingData), "EvaluateLowSampleCountPercentile" :: NullOrUndefined (EvaluateLowSampleCountPercentile) }) -> MetricAlarm
+newMetricAlarm' :: ({ "AlarmName" :: Maybe (AlarmName), "AlarmArn" :: Maybe (AlarmArn), "AlarmDescription" :: Maybe (AlarmDescription), "AlarmConfigurationUpdatedTimestamp" :: Maybe (Timestamp), "ActionsEnabled" :: Maybe (ActionsEnabled), "OKActions" :: Maybe (ResourceList), "AlarmActions" :: Maybe (ResourceList), "InsufficientDataActions" :: Maybe (ResourceList), "StateValue" :: Maybe (StateValue), "StateReason" :: Maybe (StateReason), "StateReasonData" :: Maybe (StateReasonData), "StateUpdatedTimestamp" :: Maybe (Timestamp), "MetricName" :: Maybe (MetricName), "Namespace" :: Maybe (Namespace), "Statistic" :: Maybe (Statistic), "ExtendedStatistic" :: Maybe (ExtendedStatistic), "Dimensions" :: Maybe (Dimensions), "Period" :: Maybe (Period), "Unit" :: Maybe (StandardUnit), "EvaluationPeriods" :: Maybe (EvaluationPeriods), "DatapointsToAlarm" :: Maybe (DatapointsToAlarm), "Threshold" :: Maybe (Threshold), "ComparisonOperator" :: Maybe (ComparisonOperator), "TreatMissingData" :: Maybe (TreatMissingData), "EvaluateLowSampleCountPercentile" :: Maybe (EvaluateLowSampleCountPercentile) } -> { "AlarmName" :: Maybe (AlarmName), "AlarmArn" :: Maybe (AlarmArn), "AlarmDescription" :: Maybe (AlarmDescription), "AlarmConfigurationUpdatedTimestamp" :: Maybe (Timestamp), "ActionsEnabled" :: Maybe (ActionsEnabled), "OKActions" :: Maybe (ResourceList), "AlarmActions" :: Maybe (ResourceList), "InsufficientDataActions" :: Maybe (ResourceList), "StateValue" :: Maybe (StateValue), "StateReason" :: Maybe (StateReason), "StateReasonData" :: Maybe (StateReasonData), "StateUpdatedTimestamp" :: Maybe (Timestamp), "MetricName" :: Maybe (MetricName), "Namespace" :: Maybe (Namespace), "Statistic" :: Maybe (Statistic), "ExtendedStatistic" :: Maybe (ExtendedStatistic), "Dimensions" :: Maybe (Dimensions), "Period" :: Maybe (Period), "Unit" :: Maybe (StandardUnit), "EvaluationPeriods" :: Maybe (EvaluationPeriods), "DatapointsToAlarm" :: Maybe (DatapointsToAlarm), "Threshold" :: Maybe (Threshold), "ComparisonOperator" :: Maybe (ComparisonOperator), "TreatMissingData" :: Maybe (TreatMissingData), "EvaluateLowSampleCountPercentile" :: Maybe (EvaluateLowSampleCountPercentile) }) -> MetricAlarm
 ```
 
 Constructs MetricAlarm's fields from required parameters
@@ -1802,7 +1802,7 @@ Encode MetricData
 
 ``` purescript
 newtype MetricDatum
-  = MetricDatum { "MetricName" :: MetricName, "Dimensions" :: NullOrUndefined (Dimensions), "Timestamp" :: NullOrUndefined (Timestamp), "Value" :: NullOrUndefined (DatapointValue), "StatisticValues" :: NullOrUndefined (StatisticSet), "Unit" :: NullOrUndefined (StandardUnit), "StorageResolution" :: NullOrUndefined (StorageResolution) }
+  = MetricDatum { "MetricName" :: MetricName, "Dimensions" :: Maybe (Dimensions), "Timestamp" :: Maybe (Timestamp), "Value" :: Maybe (DatapointValue), "StatisticValues" :: Maybe (StatisticSet), "Unit" :: Maybe (StandardUnit), "StorageResolution" :: Maybe (StorageResolution) }
 ```
 
 <p>Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric.</p>
@@ -1827,7 +1827,7 @@ Constructs MetricDatum from required parameters
 #### `newMetricDatum'`
 
 ``` purescript
-newMetricDatum' :: MetricName -> ({ "MetricName" :: MetricName, "Dimensions" :: NullOrUndefined (Dimensions), "Timestamp" :: NullOrUndefined (Timestamp), "Value" :: NullOrUndefined (DatapointValue), "StatisticValues" :: NullOrUndefined (StatisticSet), "Unit" :: NullOrUndefined (StandardUnit), "StorageResolution" :: NullOrUndefined (StorageResolution) } -> { "MetricName" :: MetricName, "Dimensions" :: NullOrUndefined (Dimensions), "Timestamp" :: NullOrUndefined (Timestamp), "Value" :: NullOrUndefined (DatapointValue), "StatisticValues" :: NullOrUndefined (StatisticSet), "Unit" :: NullOrUndefined (StandardUnit), "StorageResolution" :: NullOrUndefined (StorageResolution) }) -> MetricDatum
+newMetricDatum' :: MetricName -> ({ "MetricName" :: MetricName, "Dimensions" :: Maybe (Dimensions), "Timestamp" :: Maybe (Timestamp), "Value" :: Maybe (DatapointValue), "StatisticValues" :: Maybe (StatisticSet), "Unit" :: Maybe (StandardUnit), "StorageResolution" :: Maybe (StorageResolution) } -> { "MetricName" :: MetricName, "Dimensions" :: Maybe (Dimensions), "Timestamp" :: Maybe (Timestamp), "Value" :: Maybe (DatapointValue), "StatisticValues" :: Maybe (StatisticSet), "Unit" :: Maybe (StandardUnit), "StorageResolution" :: Maybe (StorageResolution) }) -> MetricDatum
 ```
 
 Constructs MetricDatum's fields from required parameters
@@ -1884,7 +1884,7 @@ Encode Metrics
 
 ``` purescript
 newtype MissingRequiredParameterException
-  = MissingRequiredParameterException { message :: NullOrUndefined (AwsQueryErrorMessage) }
+  = MissingRequiredParameterException { message :: Maybe (AwsQueryErrorMessage) }
 ```
 
 <p>An input parameter that is required is missing.</p>
@@ -1909,7 +1909,7 @@ Constructs MissingRequiredParameterException from required parameters
 #### `newMissingRequiredParameterException'`
 
 ``` purescript
-newMissingRequiredParameterException' :: ({ message :: NullOrUndefined (AwsQueryErrorMessage) } -> { message :: NullOrUndefined (AwsQueryErrorMessage) }) -> MissingRequiredParameterException
+newMissingRequiredParameterException' :: ({ message :: Maybe (AwsQueryErrorMessage) } -> { message :: Maybe (AwsQueryErrorMessage) }) -> MissingRequiredParameterException
 ```
 
 Constructs MissingRequiredParameterException's fields from required parameters
@@ -1998,7 +1998,7 @@ Constructs PutDashboardInput's fields from required parameters
 
 ``` purescript
 newtype PutDashboardOutput
-  = PutDashboardOutput { "DashboardValidationMessages" :: NullOrUndefined (DashboardValidationMessages) }
+  = PutDashboardOutput { "DashboardValidationMessages" :: Maybe (DashboardValidationMessages) }
 ```
 
 ##### Instances
@@ -2021,7 +2021,7 @@ Constructs PutDashboardOutput from required parameters
 #### `newPutDashboardOutput'`
 
 ``` purescript
-newPutDashboardOutput' :: ({ "DashboardValidationMessages" :: NullOrUndefined (DashboardValidationMessages) } -> { "DashboardValidationMessages" :: NullOrUndefined (DashboardValidationMessages) }) -> PutDashboardOutput
+newPutDashboardOutput' :: ({ "DashboardValidationMessages" :: Maybe (DashboardValidationMessages) } -> { "DashboardValidationMessages" :: Maybe (DashboardValidationMessages) }) -> PutDashboardOutput
 ```
 
 Constructs PutDashboardOutput's fields from required parameters
@@ -2030,7 +2030,7 @@ Constructs PutDashboardOutput's fields from required parameters
 
 ``` purescript
 newtype PutMetricAlarmInput
-  = PutMetricAlarmInput { "AlarmName" :: AlarmName, "AlarmDescription" :: NullOrUndefined (AlarmDescription), "ActionsEnabled" :: NullOrUndefined (ActionsEnabled), "OKActions" :: NullOrUndefined (ResourceList), "AlarmActions" :: NullOrUndefined (ResourceList), "InsufficientDataActions" :: NullOrUndefined (ResourceList), "MetricName" :: MetricName, "Namespace" :: Namespace, "Statistic" :: NullOrUndefined (Statistic), "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic), "Dimensions" :: NullOrUndefined (Dimensions), "Period" :: Period, "Unit" :: NullOrUndefined (StandardUnit), "EvaluationPeriods" :: EvaluationPeriods, "DatapointsToAlarm" :: NullOrUndefined (DatapointsToAlarm), "Threshold" :: Threshold, "ComparisonOperator" :: ComparisonOperator, "TreatMissingData" :: NullOrUndefined (TreatMissingData), "EvaluateLowSampleCountPercentile" :: NullOrUndefined (EvaluateLowSampleCountPercentile) }
+  = PutMetricAlarmInput { "AlarmName" :: AlarmName, "AlarmDescription" :: Maybe (AlarmDescription), "ActionsEnabled" :: Maybe (ActionsEnabled), "OKActions" :: Maybe (ResourceList), "AlarmActions" :: Maybe (ResourceList), "InsufficientDataActions" :: Maybe (ResourceList), "MetricName" :: MetricName, "Namespace" :: Namespace, "Statistic" :: Maybe (Statistic), "ExtendedStatistic" :: Maybe (ExtendedStatistic), "Dimensions" :: Maybe (Dimensions), "Period" :: Period, "Unit" :: Maybe (StandardUnit), "EvaluationPeriods" :: EvaluationPeriods, "DatapointsToAlarm" :: Maybe (DatapointsToAlarm), "Threshold" :: Threshold, "ComparisonOperator" :: ComparisonOperator, "TreatMissingData" :: Maybe (TreatMissingData), "EvaluateLowSampleCountPercentile" :: Maybe (EvaluateLowSampleCountPercentile) }
 ```
 
 ##### Instances
@@ -2053,7 +2053,7 @@ Constructs PutMetricAlarmInput from required parameters
 #### `newPutMetricAlarmInput'`
 
 ``` purescript
-newPutMetricAlarmInput' :: AlarmName -> ComparisonOperator -> EvaluationPeriods -> MetricName -> Namespace -> Period -> Threshold -> ({ "AlarmName" :: AlarmName, "AlarmDescription" :: NullOrUndefined (AlarmDescription), "ActionsEnabled" :: NullOrUndefined (ActionsEnabled), "OKActions" :: NullOrUndefined (ResourceList), "AlarmActions" :: NullOrUndefined (ResourceList), "InsufficientDataActions" :: NullOrUndefined (ResourceList), "MetricName" :: MetricName, "Namespace" :: Namespace, "Statistic" :: NullOrUndefined (Statistic), "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic), "Dimensions" :: NullOrUndefined (Dimensions), "Period" :: Period, "Unit" :: NullOrUndefined (StandardUnit), "EvaluationPeriods" :: EvaluationPeriods, "DatapointsToAlarm" :: NullOrUndefined (DatapointsToAlarm), "Threshold" :: Threshold, "ComparisonOperator" :: ComparisonOperator, "TreatMissingData" :: NullOrUndefined (TreatMissingData), "EvaluateLowSampleCountPercentile" :: NullOrUndefined (EvaluateLowSampleCountPercentile) } -> { "AlarmName" :: AlarmName, "AlarmDescription" :: NullOrUndefined (AlarmDescription), "ActionsEnabled" :: NullOrUndefined (ActionsEnabled), "OKActions" :: NullOrUndefined (ResourceList), "AlarmActions" :: NullOrUndefined (ResourceList), "InsufficientDataActions" :: NullOrUndefined (ResourceList), "MetricName" :: MetricName, "Namespace" :: Namespace, "Statistic" :: NullOrUndefined (Statistic), "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic), "Dimensions" :: NullOrUndefined (Dimensions), "Period" :: Period, "Unit" :: NullOrUndefined (StandardUnit), "EvaluationPeriods" :: EvaluationPeriods, "DatapointsToAlarm" :: NullOrUndefined (DatapointsToAlarm), "Threshold" :: Threshold, "ComparisonOperator" :: ComparisonOperator, "TreatMissingData" :: NullOrUndefined (TreatMissingData), "EvaluateLowSampleCountPercentile" :: NullOrUndefined (EvaluateLowSampleCountPercentile) }) -> PutMetricAlarmInput
+newPutMetricAlarmInput' :: AlarmName -> ComparisonOperator -> EvaluationPeriods -> MetricName -> Namespace -> Period -> Threshold -> ({ "AlarmName" :: AlarmName, "AlarmDescription" :: Maybe (AlarmDescription), "ActionsEnabled" :: Maybe (ActionsEnabled), "OKActions" :: Maybe (ResourceList), "AlarmActions" :: Maybe (ResourceList), "InsufficientDataActions" :: Maybe (ResourceList), "MetricName" :: MetricName, "Namespace" :: Namespace, "Statistic" :: Maybe (Statistic), "ExtendedStatistic" :: Maybe (ExtendedStatistic), "Dimensions" :: Maybe (Dimensions), "Period" :: Period, "Unit" :: Maybe (StandardUnit), "EvaluationPeriods" :: EvaluationPeriods, "DatapointsToAlarm" :: Maybe (DatapointsToAlarm), "Threshold" :: Threshold, "ComparisonOperator" :: ComparisonOperator, "TreatMissingData" :: Maybe (TreatMissingData), "EvaluateLowSampleCountPercentile" :: Maybe (EvaluateLowSampleCountPercentile) } -> { "AlarmName" :: AlarmName, "AlarmDescription" :: Maybe (AlarmDescription), "ActionsEnabled" :: Maybe (ActionsEnabled), "OKActions" :: Maybe (ResourceList), "AlarmActions" :: Maybe (ResourceList), "InsufficientDataActions" :: Maybe (ResourceList), "MetricName" :: MetricName, "Namespace" :: Namespace, "Statistic" :: Maybe (Statistic), "ExtendedStatistic" :: Maybe (ExtendedStatistic), "Dimensions" :: Maybe (Dimensions), "Period" :: Period, "Unit" :: Maybe (StandardUnit), "EvaluationPeriods" :: EvaluationPeriods, "DatapointsToAlarm" :: Maybe (DatapointsToAlarm), "Threshold" :: Threshold, "ComparisonOperator" :: ComparisonOperator, "TreatMissingData" :: Maybe (TreatMissingData), "EvaluateLowSampleCountPercentile" :: Maybe (EvaluateLowSampleCountPercentile) }) -> PutMetricAlarmInput
 ```
 
 Constructs PutMetricAlarmInput's fields from required parameters
@@ -2126,7 +2126,7 @@ Encode ResourceName
 
 ``` purescript
 newtype ResourceNotFound
-  = ResourceNotFound { message :: NullOrUndefined (ErrorMessage) }
+  = ResourceNotFound { message :: Maybe (ErrorMessage) }
 ```
 
 <p>The named resource does not exist.</p>
@@ -2151,7 +2151,7 @@ Constructs ResourceNotFound from required parameters
 #### `newResourceNotFound'`
 
 ``` purescript
-newResourceNotFound' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> ResourceNotFound
+newResourceNotFound' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> ResourceNotFound
 ```
 
 Constructs ResourceNotFound's fields from required parameters
@@ -2160,7 +2160,7 @@ Constructs ResourceNotFound's fields from required parameters
 
 ``` purescript
 newtype SetAlarmStateInput
-  = SetAlarmStateInput { "AlarmName" :: AlarmName, "StateValue" :: StateValue, "StateReason" :: StateReason, "StateReasonData" :: NullOrUndefined (StateReasonData) }
+  = SetAlarmStateInput { "AlarmName" :: AlarmName, "StateValue" :: StateValue, "StateReason" :: StateReason, "StateReasonData" :: Maybe (StateReasonData) }
 ```
 
 ##### Instances
@@ -2183,7 +2183,7 @@ Constructs SetAlarmStateInput from required parameters
 #### `newSetAlarmStateInput'`
 
 ``` purescript
-newSetAlarmStateInput' :: AlarmName -> StateReason -> StateValue -> ({ "AlarmName" :: AlarmName, "StateValue" :: StateValue, "StateReason" :: StateReason, "StateReasonData" :: NullOrUndefined (StateReasonData) } -> { "AlarmName" :: AlarmName, "StateValue" :: StateValue, "StateReason" :: StateReason, "StateReasonData" :: NullOrUndefined (StateReasonData) }) -> SetAlarmStateInput
+newSetAlarmStateInput' :: AlarmName -> StateReason -> StateValue -> ({ "AlarmName" :: AlarmName, "StateValue" :: StateValue, "StateReason" :: StateReason, "StateReasonData" :: Maybe (StateReasonData) } -> { "AlarmName" :: AlarmName, "StateValue" :: StateValue, "StateReason" :: StateReason, "StateReasonData" :: Maybe (StateReasonData) }) -> SetAlarmStateInput
 ```
 
 Constructs SetAlarmStateInput's fields from required parameters

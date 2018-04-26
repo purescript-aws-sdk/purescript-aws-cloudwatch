@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -56,11 +55,11 @@ instance encodeAlarmDescription :: Encode AlarmDescription where encode = generi
 
 -- | <p>Represents the history of a specific alarm.</p>
 newtype AlarmHistoryItem = AlarmHistoryItem 
-  { "AlarmName" :: NullOrUndefined (AlarmName)
-  , "Timestamp" :: NullOrUndefined (Types.Timestamp)
-  , "HistoryItemType" :: NullOrUndefined (HistoryItemType)
-  , "HistorySummary" :: NullOrUndefined (HistorySummary)
-  , "HistoryData" :: NullOrUndefined (HistoryData)
+  { "AlarmName" :: Maybe (AlarmName)
+  , "Timestamp" :: Maybe (Types.Timestamp)
+  , "HistoryItemType" :: Maybe (HistoryItemType)
+  , "HistorySummary" :: Maybe (HistorySummary)
+  , "HistoryData" :: Maybe (HistoryData)
   }
 derive instance newtypeAlarmHistoryItem :: Newtype AlarmHistoryItem _
 derive instance repGenericAlarmHistoryItem :: Generic AlarmHistoryItem _
@@ -70,12 +69,12 @@ instance encodeAlarmHistoryItem :: Encode AlarmHistoryItem where encode = generi
 
 -- | Constructs AlarmHistoryItem from required parameters
 newAlarmHistoryItem :: AlarmHistoryItem
-newAlarmHistoryItem  = AlarmHistoryItem { "AlarmName": (NullOrUndefined Nothing), "HistoryData": (NullOrUndefined Nothing), "HistoryItemType": (NullOrUndefined Nothing), "HistorySummary": (NullOrUndefined Nothing), "Timestamp": (NullOrUndefined Nothing) }
+newAlarmHistoryItem  = AlarmHistoryItem { "AlarmName": Nothing, "HistoryData": Nothing, "HistoryItemType": Nothing, "HistorySummary": Nothing, "Timestamp": Nothing }
 
 -- | Constructs AlarmHistoryItem's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAlarmHistoryItem' :: ( { "AlarmName" :: NullOrUndefined (AlarmName) , "Timestamp" :: NullOrUndefined (Types.Timestamp) , "HistoryItemType" :: NullOrUndefined (HistoryItemType) , "HistorySummary" :: NullOrUndefined (HistorySummary) , "HistoryData" :: NullOrUndefined (HistoryData) } -> {"AlarmName" :: NullOrUndefined (AlarmName) , "Timestamp" :: NullOrUndefined (Types.Timestamp) , "HistoryItemType" :: NullOrUndefined (HistoryItemType) , "HistorySummary" :: NullOrUndefined (HistorySummary) , "HistoryData" :: NullOrUndefined (HistoryData) } ) -> AlarmHistoryItem
-newAlarmHistoryItem'  customize = (AlarmHistoryItem <<< customize) { "AlarmName": (NullOrUndefined Nothing), "HistoryData": (NullOrUndefined Nothing), "HistoryItemType": (NullOrUndefined Nothing), "HistorySummary": (NullOrUndefined Nothing), "Timestamp": (NullOrUndefined Nothing) }
+newAlarmHistoryItem' :: ( { "AlarmName" :: Maybe (AlarmName) , "Timestamp" :: Maybe (Types.Timestamp) , "HistoryItemType" :: Maybe (HistoryItemType) , "HistorySummary" :: Maybe (HistorySummary) , "HistoryData" :: Maybe (HistoryData) } -> {"AlarmName" :: Maybe (AlarmName) , "Timestamp" :: Maybe (Types.Timestamp) , "HistoryItemType" :: Maybe (HistoryItemType) , "HistorySummary" :: Maybe (HistorySummary) , "HistoryData" :: Maybe (HistoryData) } ) -> AlarmHistoryItem
+newAlarmHistoryItem'  customize = (AlarmHistoryItem <<< customize) { "AlarmName": Nothing, "HistoryData": Nothing, "HistoryItemType": Nothing, "HistorySummary": Nothing, "Timestamp": Nothing }
 
 
 
@@ -162,10 +161,10 @@ instance encodeDashboardEntries :: Encode DashboardEntries where encode = generi
 
 -- | <p>Represents a specific dashboard.</p>
 newtype DashboardEntry = DashboardEntry 
-  { "DashboardName" :: NullOrUndefined (DashboardName)
-  , "DashboardArn" :: NullOrUndefined (DashboardArn)
-  , "LastModified" :: NullOrUndefined (LastModified)
-  , "Size" :: NullOrUndefined (Size)
+  { "DashboardName" :: Maybe (DashboardName)
+  , "DashboardArn" :: Maybe (DashboardArn)
+  , "LastModified" :: Maybe (LastModified)
+  , "Size" :: Maybe (Size)
   }
 derive instance newtypeDashboardEntry :: Newtype DashboardEntry _
 derive instance repGenericDashboardEntry :: Generic DashboardEntry _
@@ -175,12 +174,12 @@ instance encodeDashboardEntry :: Encode DashboardEntry where encode = genericEnc
 
 -- | Constructs DashboardEntry from required parameters
 newDashboardEntry :: DashboardEntry
-newDashboardEntry  = DashboardEntry { "DashboardArn": (NullOrUndefined Nothing), "DashboardName": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing) }
+newDashboardEntry  = DashboardEntry { "DashboardArn": Nothing, "DashboardName": Nothing, "LastModified": Nothing, "Size": Nothing }
 
 -- | Constructs DashboardEntry's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDashboardEntry' :: ( { "DashboardName" :: NullOrUndefined (DashboardName) , "DashboardArn" :: NullOrUndefined (DashboardArn) , "LastModified" :: NullOrUndefined (LastModified) , "Size" :: NullOrUndefined (Size) } -> {"DashboardName" :: NullOrUndefined (DashboardName) , "DashboardArn" :: NullOrUndefined (DashboardArn) , "LastModified" :: NullOrUndefined (LastModified) , "Size" :: NullOrUndefined (Size) } ) -> DashboardEntry
-newDashboardEntry'  customize = (DashboardEntry <<< customize) { "DashboardArn": (NullOrUndefined Nothing), "DashboardName": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing) }
+newDashboardEntry' :: ( { "DashboardName" :: Maybe (DashboardName) , "DashboardArn" :: Maybe (DashboardArn) , "LastModified" :: Maybe (LastModified) , "Size" :: Maybe (Size) } -> {"DashboardName" :: Maybe (DashboardName) , "DashboardArn" :: Maybe (DashboardArn) , "LastModified" :: Maybe (LastModified) , "Size" :: Maybe (Size) } ) -> DashboardEntry
+newDashboardEntry'  customize = (DashboardEntry <<< customize) { "DashboardArn": Nothing, "DashboardName": Nothing, "LastModified": Nothing, "Size": Nothing }
 
 
 
@@ -195,8 +194,8 @@ instance encodeDashboardErrorMessage :: Encode DashboardErrorMessage where encod
 
 -- | <p>Some part of the dashboard data is invalid.</p>
 newtype DashboardInvalidInputError = DashboardInvalidInputError 
-  { "message" :: NullOrUndefined (DashboardErrorMessage)
-  , "dashboardValidationMessages" :: NullOrUndefined (DashboardValidationMessages)
+  { "message" :: Maybe (DashboardErrorMessage)
+  , "dashboardValidationMessages" :: Maybe (DashboardValidationMessages)
   }
 derive instance newtypeDashboardInvalidInputError :: Newtype DashboardInvalidInputError _
 derive instance repGenericDashboardInvalidInputError :: Generic DashboardInvalidInputError _
@@ -206,12 +205,12 @@ instance encodeDashboardInvalidInputError :: Encode DashboardInvalidInputError w
 
 -- | Constructs DashboardInvalidInputError from required parameters
 newDashboardInvalidInputError :: DashboardInvalidInputError
-newDashboardInvalidInputError  = DashboardInvalidInputError { "dashboardValidationMessages": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing) }
+newDashboardInvalidInputError  = DashboardInvalidInputError { "dashboardValidationMessages": Nothing, "message": Nothing }
 
 -- | Constructs DashboardInvalidInputError's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDashboardInvalidInputError' :: ( { "message" :: NullOrUndefined (DashboardErrorMessage) , "dashboardValidationMessages" :: NullOrUndefined (DashboardValidationMessages) } -> {"message" :: NullOrUndefined (DashboardErrorMessage) , "dashboardValidationMessages" :: NullOrUndefined (DashboardValidationMessages) } ) -> DashboardInvalidInputError
-newDashboardInvalidInputError'  customize = (DashboardInvalidInputError <<< customize) { "dashboardValidationMessages": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing) }
+newDashboardInvalidInputError' :: ( { "message" :: Maybe (DashboardErrorMessage) , "dashboardValidationMessages" :: Maybe (DashboardValidationMessages) } -> {"message" :: Maybe (DashboardErrorMessage) , "dashboardValidationMessages" :: Maybe (DashboardValidationMessages) } ) -> DashboardInvalidInputError
+newDashboardInvalidInputError'  customize = (DashboardInvalidInputError <<< customize) { "dashboardValidationMessages": Nothing, "message": Nothing }
 
 
 
@@ -244,7 +243,7 @@ instance encodeDashboardNames :: Encode DashboardNames where encode = genericEnc
 
 -- | <p>The specified dashboard does not exist.</p>
 newtype DashboardNotFoundError = DashboardNotFoundError 
-  { "message" :: NullOrUndefined (DashboardErrorMessage)
+  { "message" :: Maybe (DashboardErrorMessage)
   }
 derive instance newtypeDashboardNotFoundError :: Newtype DashboardNotFoundError _
 derive instance repGenericDashboardNotFoundError :: Generic DashboardNotFoundError _
@@ -254,19 +253,19 @@ instance encodeDashboardNotFoundError :: Encode DashboardNotFoundError where enc
 
 -- | Constructs DashboardNotFoundError from required parameters
 newDashboardNotFoundError :: DashboardNotFoundError
-newDashboardNotFoundError  = DashboardNotFoundError { "message": (NullOrUndefined Nothing) }
+newDashboardNotFoundError  = DashboardNotFoundError { "message": Nothing }
 
 -- | Constructs DashboardNotFoundError's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDashboardNotFoundError' :: ( { "message" :: NullOrUndefined (DashboardErrorMessage) } -> {"message" :: NullOrUndefined (DashboardErrorMessage) } ) -> DashboardNotFoundError
-newDashboardNotFoundError'  customize = (DashboardNotFoundError <<< customize) { "message": (NullOrUndefined Nothing) }
+newDashboardNotFoundError' :: ( { "message" :: Maybe (DashboardErrorMessage) } -> {"message" :: Maybe (DashboardErrorMessage) } ) -> DashboardNotFoundError
+newDashboardNotFoundError'  customize = (DashboardNotFoundError <<< customize) { "message": Nothing }
 
 
 
 -- | <p>An error or warning for the operation.</p>
 newtype DashboardValidationMessage = DashboardValidationMessage 
-  { "DataPath" :: NullOrUndefined (DataPath)
-  , "Message" :: NullOrUndefined (Message)
+  { "DataPath" :: Maybe (DataPath)
+  , "Message" :: Maybe (Message)
   }
 derive instance newtypeDashboardValidationMessage :: Newtype DashboardValidationMessage _
 derive instance repGenericDashboardValidationMessage :: Generic DashboardValidationMessage _
@@ -276,12 +275,12 @@ instance encodeDashboardValidationMessage :: Encode DashboardValidationMessage w
 
 -- | Constructs DashboardValidationMessage from required parameters
 newDashboardValidationMessage :: DashboardValidationMessage
-newDashboardValidationMessage  = DashboardValidationMessage { "DataPath": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newDashboardValidationMessage  = DashboardValidationMessage { "DataPath": Nothing, "Message": Nothing }
 
 -- | Constructs DashboardValidationMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDashboardValidationMessage' :: ( { "DataPath" :: NullOrUndefined (DataPath) , "Message" :: NullOrUndefined (Message) } -> {"DataPath" :: NullOrUndefined (DataPath) , "Message" :: NullOrUndefined (Message) } ) -> DashboardValidationMessage
-newDashboardValidationMessage'  customize = (DashboardValidationMessage <<< customize) { "DataPath": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newDashboardValidationMessage' :: ( { "DataPath" :: Maybe (DataPath) , "Message" :: Maybe (Message) } -> {"DataPath" :: Maybe (DataPath) , "Message" :: Maybe (Message) } ) -> DashboardValidationMessage
+newDashboardValidationMessage'  customize = (DashboardValidationMessage <<< customize) { "DataPath": Nothing, "Message": Nothing }
 
 
 
@@ -305,14 +304,14 @@ instance encodeDataPath :: Encode DataPath where encode = genericEncode options
 
 -- | <p>Encapsulates the statistical data that CloudWatch computes from metric data.</p>
 newtype Datapoint = Datapoint 
-  { "Timestamp" :: NullOrUndefined (Types.Timestamp)
-  , "SampleCount" :: NullOrUndefined (DatapointValue)
-  , "Average" :: NullOrUndefined (DatapointValue)
-  , "Sum" :: NullOrUndefined (DatapointValue)
-  , "Minimum" :: NullOrUndefined (DatapointValue)
-  , "Maximum" :: NullOrUndefined (DatapointValue)
-  , "Unit" :: NullOrUndefined (StandardUnit)
-  , "ExtendedStatistics" :: NullOrUndefined (DatapointValueMap)
+  { "Timestamp" :: Maybe (Types.Timestamp)
+  , "SampleCount" :: Maybe (DatapointValue)
+  , "Average" :: Maybe (DatapointValue)
+  , "Sum" :: Maybe (DatapointValue)
+  , "Minimum" :: Maybe (DatapointValue)
+  , "Maximum" :: Maybe (DatapointValue)
+  , "Unit" :: Maybe (StandardUnit)
+  , "ExtendedStatistics" :: Maybe (DatapointValueMap)
   }
 derive instance newtypeDatapoint :: Newtype Datapoint _
 derive instance repGenericDatapoint :: Generic Datapoint _
@@ -322,12 +321,12 @@ instance encodeDatapoint :: Encode Datapoint where encode = genericEncode option
 
 -- | Constructs Datapoint from required parameters
 newDatapoint :: Datapoint
-newDatapoint  = Datapoint { "Average": (NullOrUndefined Nothing), "ExtendedStatistics": (NullOrUndefined Nothing), "Maximum": (NullOrUndefined Nothing), "Minimum": (NullOrUndefined Nothing), "SampleCount": (NullOrUndefined Nothing), "Sum": (NullOrUndefined Nothing), "Timestamp": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newDatapoint  = Datapoint { "Average": Nothing, "ExtendedStatistics": Nothing, "Maximum": Nothing, "Minimum": Nothing, "SampleCount": Nothing, "Sum": Nothing, "Timestamp": Nothing, "Unit": Nothing }
 
 -- | Constructs Datapoint's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDatapoint' :: ( { "Timestamp" :: NullOrUndefined (Types.Timestamp) , "SampleCount" :: NullOrUndefined (DatapointValue) , "Average" :: NullOrUndefined (DatapointValue) , "Sum" :: NullOrUndefined (DatapointValue) , "Minimum" :: NullOrUndefined (DatapointValue) , "Maximum" :: NullOrUndefined (DatapointValue) , "Unit" :: NullOrUndefined (StandardUnit) , "ExtendedStatistics" :: NullOrUndefined (DatapointValueMap) } -> {"Timestamp" :: NullOrUndefined (Types.Timestamp) , "SampleCount" :: NullOrUndefined (DatapointValue) , "Average" :: NullOrUndefined (DatapointValue) , "Sum" :: NullOrUndefined (DatapointValue) , "Minimum" :: NullOrUndefined (DatapointValue) , "Maximum" :: NullOrUndefined (DatapointValue) , "Unit" :: NullOrUndefined (StandardUnit) , "ExtendedStatistics" :: NullOrUndefined (DatapointValueMap) } ) -> Datapoint
-newDatapoint'  customize = (Datapoint <<< customize) { "Average": (NullOrUndefined Nothing), "ExtendedStatistics": (NullOrUndefined Nothing), "Maximum": (NullOrUndefined Nothing), "Minimum": (NullOrUndefined Nothing), "SampleCount": (NullOrUndefined Nothing), "Sum": (NullOrUndefined Nothing), "Timestamp": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newDatapoint' :: ( { "Timestamp" :: Maybe (Types.Timestamp) , "SampleCount" :: Maybe (DatapointValue) , "Average" :: Maybe (DatapointValue) , "Sum" :: Maybe (DatapointValue) , "Minimum" :: Maybe (DatapointValue) , "Maximum" :: Maybe (DatapointValue) , "Unit" :: Maybe (StandardUnit) , "ExtendedStatistics" :: Maybe (DatapointValueMap) } -> {"Timestamp" :: Maybe (Types.Timestamp) , "SampleCount" :: Maybe (DatapointValue) , "Average" :: Maybe (DatapointValue) , "Sum" :: Maybe (DatapointValue) , "Minimum" :: Maybe (DatapointValue) , "Maximum" :: Maybe (DatapointValue) , "Unit" :: Maybe (StandardUnit) , "ExtendedStatistics" :: Maybe (DatapointValueMap) } ) -> Datapoint
+newDatapoint'  customize = (Datapoint <<< customize) { "Average": Nothing, "ExtendedStatistics": Nothing, "Maximum": Nothing, "Minimum": Nothing, "SampleCount": Nothing, "Sum": Nothing, "Timestamp": Nothing, "Unit": Nothing }
 
 
 
@@ -417,12 +416,12 @@ instance encodeDeleteDashboardsOutput :: Encode DeleteDashboardsOutput where enc
 
 
 newtype DescribeAlarmHistoryInput = DescribeAlarmHistoryInput 
-  { "AlarmName" :: NullOrUndefined (AlarmName)
-  , "HistoryItemType" :: NullOrUndefined (HistoryItemType)
-  , "StartDate" :: NullOrUndefined (Types.Timestamp)
-  , "EndDate" :: NullOrUndefined (Types.Timestamp)
-  , "MaxRecords" :: NullOrUndefined (MaxRecords)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "AlarmName" :: Maybe (AlarmName)
+  , "HistoryItemType" :: Maybe (HistoryItemType)
+  , "StartDate" :: Maybe (Types.Timestamp)
+  , "EndDate" :: Maybe (Types.Timestamp)
+  , "MaxRecords" :: Maybe (MaxRecords)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeAlarmHistoryInput :: Newtype DescribeAlarmHistoryInput _
 derive instance repGenericDescribeAlarmHistoryInput :: Generic DescribeAlarmHistoryInput _
@@ -432,18 +431,18 @@ instance encodeDescribeAlarmHistoryInput :: Encode DescribeAlarmHistoryInput whe
 
 -- | Constructs DescribeAlarmHistoryInput from required parameters
 newDescribeAlarmHistoryInput :: DescribeAlarmHistoryInput
-newDescribeAlarmHistoryInput  = DescribeAlarmHistoryInput { "AlarmName": (NullOrUndefined Nothing), "EndDate": (NullOrUndefined Nothing), "HistoryItemType": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "StartDate": (NullOrUndefined Nothing) }
+newDescribeAlarmHistoryInput  = DescribeAlarmHistoryInput { "AlarmName": Nothing, "EndDate": Nothing, "HistoryItemType": Nothing, "MaxRecords": Nothing, "NextToken": Nothing, "StartDate": Nothing }
 
 -- | Constructs DescribeAlarmHistoryInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAlarmHistoryInput' :: ( { "AlarmName" :: NullOrUndefined (AlarmName) , "HistoryItemType" :: NullOrUndefined (HistoryItemType) , "StartDate" :: NullOrUndefined (Types.Timestamp) , "EndDate" :: NullOrUndefined (Types.Timestamp) , "MaxRecords" :: NullOrUndefined (MaxRecords) , "NextToken" :: NullOrUndefined (NextToken) } -> {"AlarmName" :: NullOrUndefined (AlarmName) , "HistoryItemType" :: NullOrUndefined (HistoryItemType) , "StartDate" :: NullOrUndefined (Types.Timestamp) , "EndDate" :: NullOrUndefined (Types.Timestamp) , "MaxRecords" :: NullOrUndefined (MaxRecords) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeAlarmHistoryInput
-newDescribeAlarmHistoryInput'  customize = (DescribeAlarmHistoryInput <<< customize) { "AlarmName": (NullOrUndefined Nothing), "EndDate": (NullOrUndefined Nothing), "HistoryItemType": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "StartDate": (NullOrUndefined Nothing) }
+newDescribeAlarmHistoryInput' :: ( { "AlarmName" :: Maybe (AlarmName) , "HistoryItemType" :: Maybe (HistoryItemType) , "StartDate" :: Maybe (Types.Timestamp) , "EndDate" :: Maybe (Types.Timestamp) , "MaxRecords" :: Maybe (MaxRecords) , "NextToken" :: Maybe (NextToken) } -> {"AlarmName" :: Maybe (AlarmName) , "HistoryItemType" :: Maybe (HistoryItemType) , "StartDate" :: Maybe (Types.Timestamp) , "EndDate" :: Maybe (Types.Timestamp) , "MaxRecords" :: Maybe (MaxRecords) , "NextToken" :: Maybe (NextToken) } ) -> DescribeAlarmHistoryInput
+newDescribeAlarmHistoryInput'  customize = (DescribeAlarmHistoryInput <<< customize) { "AlarmName": Nothing, "EndDate": Nothing, "HistoryItemType": Nothing, "MaxRecords": Nothing, "NextToken": Nothing, "StartDate": Nothing }
 
 
 
 newtype DescribeAlarmHistoryOutput = DescribeAlarmHistoryOutput 
-  { "AlarmHistoryItems" :: NullOrUndefined (AlarmHistoryItems)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "AlarmHistoryItems" :: Maybe (AlarmHistoryItems)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeAlarmHistoryOutput :: Newtype DescribeAlarmHistoryOutput _
 derive instance repGenericDescribeAlarmHistoryOutput :: Generic DescribeAlarmHistoryOutput _
@@ -453,23 +452,23 @@ instance encodeDescribeAlarmHistoryOutput :: Encode DescribeAlarmHistoryOutput w
 
 -- | Constructs DescribeAlarmHistoryOutput from required parameters
 newDescribeAlarmHistoryOutput :: DescribeAlarmHistoryOutput
-newDescribeAlarmHistoryOutput  = DescribeAlarmHistoryOutput { "AlarmHistoryItems": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeAlarmHistoryOutput  = DescribeAlarmHistoryOutput { "AlarmHistoryItems": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeAlarmHistoryOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAlarmHistoryOutput' :: ( { "AlarmHistoryItems" :: NullOrUndefined (AlarmHistoryItems) , "NextToken" :: NullOrUndefined (NextToken) } -> {"AlarmHistoryItems" :: NullOrUndefined (AlarmHistoryItems) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeAlarmHistoryOutput
-newDescribeAlarmHistoryOutput'  customize = (DescribeAlarmHistoryOutput <<< customize) { "AlarmHistoryItems": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeAlarmHistoryOutput' :: ( { "AlarmHistoryItems" :: Maybe (AlarmHistoryItems) , "NextToken" :: Maybe (NextToken) } -> {"AlarmHistoryItems" :: Maybe (AlarmHistoryItems) , "NextToken" :: Maybe (NextToken) } ) -> DescribeAlarmHistoryOutput
+newDescribeAlarmHistoryOutput'  customize = (DescribeAlarmHistoryOutput <<< customize) { "AlarmHistoryItems": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeAlarmsForMetricInput = DescribeAlarmsForMetricInput 
   { "MetricName" :: (MetricName)
   , "Namespace" :: (Namespace)
-  , "Statistic" :: NullOrUndefined (Statistic)
-  , "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic)
-  , "Dimensions" :: NullOrUndefined (Dimensions)
-  , "Period" :: NullOrUndefined (Period)
-  , "Unit" :: NullOrUndefined (StandardUnit)
+  , "Statistic" :: Maybe (Statistic)
+  , "ExtendedStatistic" :: Maybe (ExtendedStatistic)
+  , "Dimensions" :: Maybe (Dimensions)
+  , "Period" :: Maybe (Period)
+  , "Unit" :: Maybe (StandardUnit)
   }
 derive instance newtypeDescribeAlarmsForMetricInput :: Newtype DescribeAlarmsForMetricInput _
 derive instance repGenericDescribeAlarmsForMetricInput :: Generic DescribeAlarmsForMetricInput _
@@ -479,17 +478,17 @@ instance encodeDescribeAlarmsForMetricInput :: Encode DescribeAlarmsForMetricInp
 
 -- | Constructs DescribeAlarmsForMetricInput from required parameters
 newDescribeAlarmsForMetricInput :: MetricName -> Namespace -> DescribeAlarmsForMetricInput
-newDescribeAlarmsForMetricInput _MetricName _Namespace = DescribeAlarmsForMetricInput { "MetricName": _MetricName, "Namespace": _Namespace, "Dimensions": (NullOrUndefined Nothing), "ExtendedStatistic": (NullOrUndefined Nothing), "Period": (NullOrUndefined Nothing), "Statistic": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newDescribeAlarmsForMetricInput _MetricName _Namespace = DescribeAlarmsForMetricInput { "MetricName": _MetricName, "Namespace": _Namespace, "Dimensions": Nothing, "ExtendedStatistic": Nothing, "Period": Nothing, "Statistic": Nothing, "Unit": Nothing }
 
 -- | Constructs DescribeAlarmsForMetricInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAlarmsForMetricInput' :: MetricName -> Namespace -> ( { "MetricName" :: (MetricName) , "Namespace" :: (Namespace) , "Statistic" :: NullOrUndefined (Statistic) , "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic) , "Dimensions" :: NullOrUndefined (Dimensions) , "Period" :: NullOrUndefined (Period) , "Unit" :: NullOrUndefined (StandardUnit) } -> {"MetricName" :: (MetricName) , "Namespace" :: (Namespace) , "Statistic" :: NullOrUndefined (Statistic) , "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic) , "Dimensions" :: NullOrUndefined (Dimensions) , "Period" :: NullOrUndefined (Period) , "Unit" :: NullOrUndefined (StandardUnit) } ) -> DescribeAlarmsForMetricInput
-newDescribeAlarmsForMetricInput' _MetricName _Namespace customize = (DescribeAlarmsForMetricInput <<< customize) { "MetricName": _MetricName, "Namespace": _Namespace, "Dimensions": (NullOrUndefined Nothing), "ExtendedStatistic": (NullOrUndefined Nothing), "Period": (NullOrUndefined Nothing), "Statistic": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newDescribeAlarmsForMetricInput' :: MetricName -> Namespace -> ( { "MetricName" :: (MetricName) , "Namespace" :: (Namespace) , "Statistic" :: Maybe (Statistic) , "ExtendedStatistic" :: Maybe (ExtendedStatistic) , "Dimensions" :: Maybe (Dimensions) , "Period" :: Maybe (Period) , "Unit" :: Maybe (StandardUnit) } -> {"MetricName" :: (MetricName) , "Namespace" :: (Namespace) , "Statistic" :: Maybe (Statistic) , "ExtendedStatistic" :: Maybe (ExtendedStatistic) , "Dimensions" :: Maybe (Dimensions) , "Period" :: Maybe (Period) , "Unit" :: Maybe (StandardUnit) } ) -> DescribeAlarmsForMetricInput
+newDescribeAlarmsForMetricInput' _MetricName _Namespace customize = (DescribeAlarmsForMetricInput <<< customize) { "MetricName": _MetricName, "Namespace": _Namespace, "Dimensions": Nothing, "ExtendedStatistic": Nothing, "Period": Nothing, "Statistic": Nothing, "Unit": Nothing }
 
 
 
 newtype DescribeAlarmsForMetricOutput = DescribeAlarmsForMetricOutput 
-  { "MetricAlarms" :: NullOrUndefined (MetricAlarms)
+  { "MetricAlarms" :: Maybe (MetricAlarms)
   }
 derive instance newtypeDescribeAlarmsForMetricOutput :: Newtype DescribeAlarmsForMetricOutput _
 derive instance repGenericDescribeAlarmsForMetricOutput :: Generic DescribeAlarmsForMetricOutput _
@@ -499,22 +498,22 @@ instance encodeDescribeAlarmsForMetricOutput :: Encode DescribeAlarmsForMetricOu
 
 -- | Constructs DescribeAlarmsForMetricOutput from required parameters
 newDescribeAlarmsForMetricOutput :: DescribeAlarmsForMetricOutput
-newDescribeAlarmsForMetricOutput  = DescribeAlarmsForMetricOutput { "MetricAlarms": (NullOrUndefined Nothing) }
+newDescribeAlarmsForMetricOutput  = DescribeAlarmsForMetricOutput { "MetricAlarms": Nothing }
 
 -- | Constructs DescribeAlarmsForMetricOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAlarmsForMetricOutput' :: ( { "MetricAlarms" :: NullOrUndefined (MetricAlarms) } -> {"MetricAlarms" :: NullOrUndefined (MetricAlarms) } ) -> DescribeAlarmsForMetricOutput
-newDescribeAlarmsForMetricOutput'  customize = (DescribeAlarmsForMetricOutput <<< customize) { "MetricAlarms": (NullOrUndefined Nothing) }
+newDescribeAlarmsForMetricOutput' :: ( { "MetricAlarms" :: Maybe (MetricAlarms) } -> {"MetricAlarms" :: Maybe (MetricAlarms) } ) -> DescribeAlarmsForMetricOutput
+newDescribeAlarmsForMetricOutput'  customize = (DescribeAlarmsForMetricOutput <<< customize) { "MetricAlarms": Nothing }
 
 
 
 newtype DescribeAlarmsInput = DescribeAlarmsInput 
-  { "AlarmNames" :: NullOrUndefined (AlarmNames)
-  , "AlarmNamePrefix" :: NullOrUndefined (AlarmNamePrefix)
-  , "StateValue" :: NullOrUndefined (StateValue)
-  , "ActionPrefix" :: NullOrUndefined (ActionPrefix)
-  , "MaxRecords" :: NullOrUndefined (MaxRecords)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "AlarmNames" :: Maybe (AlarmNames)
+  , "AlarmNamePrefix" :: Maybe (AlarmNamePrefix)
+  , "StateValue" :: Maybe (StateValue)
+  , "ActionPrefix" :: Maybe (ActionPrefix)
+  , "MaxRecords" :: Maybe (MaxRecords)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeAlarmsInput :: Newtype DescribeAlarmsInput _
 derive instance repGenericDescribeAlarmsInput :: Generic DescribeAlarmsInput _
@@ -524,18 +523,18 @@ instance encodeDescribeAlarmsInput :: Encode DescribeAlarmsInput where encode = 
 
 -- | Constructs DescribeAlarmsInput from required parameters
 newDescribeAlarmsInput :: DescribeAlarmsInput
-newDescribeAlarmsInput  = DescribeAlarmsInput { "ActionPrefix": (NullOrUndefined Nothing), "AlarmNamePrefix": (NullOrUndefined Nothing), "AlarmNames": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "StateValue": (NullOrUndefined Nothing) }
+newDescribeAlarmsInput  = DescribeAlarmsInput { "ActionPrefix": Nothing, "AlarmNamePrefix": Nothing, "AlarmNames": Nothing, "MaxRecords": Nothing, "NextToken": Nothing, "StateValue": Nothing }
 
 -- | Constructs DescribeAlarmsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAlarmsInput' :: ( { "AlarmNames" :: NullOrUndefined (AlarmNames) , "AlarmNamePrefix" :: NullOrUndefined (AlarmNamePrefix) , "StateValue" :: NullOrUndefined (StateValue) , "ActionPrefix" :: NullOrUndefined (ActionPrefix) , "MaxRecords" :: NullOrUndefined (MaxRecords) , "NextToken" :: NullOrUndefined (NextToken) } -> {"AlarmNames" :: NullOrUndefined (AlarmNames) , "AlarmNamePrefix" :: NullOrUndefined (AlarmNamePrefix) , "StateValue" :: NullOrUndefined (StateValue) , "ActionPrefix" :: NullOrUndefined (ActionPrefix) , "MaxRecords" :: NullOrUndefined (MaxRecords) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeAlarmsInput
-newDescribeAlarmsInput'  customize = (DescribeAlarmsInput <<< customize) { "ActionPrefix": (NullOrUndefined Nothing), "AlarmNamePrefix": (NullOrUndefined Nothing), "AlarmNames": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "StateValue": (NullOrUndefined Nothing) }
+newDescribeAlarmsInput' :: ( { "AlarmNames" :: Maybe (AlarmNames) , "AlarmNamePrefix" :: Maybe (AlarmNamePrefix) , "StateValue" :: Maybe (StateValue) , "ActionPrefix" :: Maybe (ActionPrefix) , "MaxRecords" :: Maybe (MaxRecords) , "NextToken" :: Maybe (NextToken) } -> {"AlarmNames" :: Maybe (AlarmNames) , "AlarmNamePrefix" :: Maybe (AlarmNamePrefix) , "StateValue" :: Maybe (StateValue) , "ActionPrefix" :: Maybe (ActionPrefix) , "MaxRecords" :: Maybe (MaxRecords) , "NextToken" :: Maybe (NextToken) } ) -> DescribeAlarmsInput
+newDescribeAlarmsInput'  customize = (DescribeAlarmsInput <<< customize) { "ActionPrefix": Nothing, "AlarmNamePrefix": Nothing, "AlarmNames": Nothing, "MaxRecords": Nothing, "NextToken": Nothing, "StateValue": Nothing }
 
 
 
 newtype DescribeAlarmsOutput = DescribeAlarmsOutput 
-  { "MetricAlarms" :: NullOrUndefined (MetricAlarms)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "MetricAlarms" :: Maybe (MetricAlarms)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeAlarmsOutput :: Newtype DescribeAlarmsOutput _
 derive instance repGenericDescribeAlarmsOutput :: Generic DescribeAlarmsOutput _
@@ -545,12 +544,12 @@ instance encodeDescribeAlarmsOutput :: Encode DescribeAlarmsOutput where encode 
 
 -- | Constructs DescribeAlarmsOutput from required parameters
 newDescribeAlarmsOutput :: DescribeAlarmsOutput
-newDescribeAlarmsOutput  = DescribeAlarmsOutput { "MetricAlarms": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeAlarmsOutput  = DescribeAlarmsOutput { "MetricAlarms": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeAlarmsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAlarmsOutput' :: ( { "MetricAlarms" :: NullOrUndefined (MetricAlarms) , "NextToken" :: NullOrUndefined (NextToken) } -> {"MetricAlarms" :: NullOrUndefined (MetricAlarms) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeAlarmsOutput
-newDescribeAlarmsOutput'  customize = (DescribeAlarmsOutput <<< customize) { "MetricAlarms": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeAlarmsOutput' :: ( { "MetricAlarms" :: Maybe (MetricAlarms) , "NextToken" :: Maybe (NextToken) } -> {"MetricAlarms" :: Maybe (MetricAlarms) , "NextToken" :: Maybe (NextToken) } ) -> DescribeAlarmsOutput
+newDescribeAlarmsOutput'  customize = (DescribeAlarmsOutput <<< customize) { "MetricAlarms": Nothing, "NextToken": Nothing }
 
 
 
@@ -579,7 +578,7 @@ newDimension' _Name _Value customize = (Dimension <<< customize) { "Name": _Name
 -- | <p>Represents filters for a dimension.</p>
 newtype DimensionFilter = DimensionFilter 
   { "Name" :: (DimensionName)
-  , "Value" :: NullOrUndefined (DimensionValue)
+  , "Value" :: Maybe (DimensionValue)
   }
 derive instance newtypeDimensionFilter :: Newtype DimensionFilter _
 derive instance repGenericDimensionFilter :: Generic DimensionFilter _
@@ -589,12 +588,12 @@ instance encodeDimensionFilter :: Encode DimensionFilter where encode = genericE
 
 -- | Constructs DimensionFilter from required parameters
 newDimensionFilter :: DimensionName -> DimensionFilter
-newDimensionFilter _Name = DimensionFilter { "Name": _Name, "Value": (NullOrUndefined Nothing) }
+newDimensionFilter _Name = DimensionFilter { "Name": _Name, "Value": Nothing }
 
 -- | Constructs DimensionFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDimensionFilter' :: DimensionName -> ( { "Name" :: (DimensionName) , "Value" :: NullOrUndefined (DimensionValue) } -> {"Name" :: (DimensionName) , "Value" :: NullOrUndefined (DimensionValue) } ) -> DimensionFilter
-newDimensionFilter' _Name customize = (DimensionFilter <<< customize) { "Name": _Name, "Value": (NullOrUndefined Nothing) }
+newDimensionFilter' :: DimensionName -> ( { "Name" :: (DimensionName) , "Value" :: Maybe (DimensionValue) } -> {"Name" :: (DimensionName) , "Value" :: Maybe (DimensionValue) } ) -> DimensionFilter
+newDimensionFilter' _Name customize = (DimensionFilter <<< customize) { "Name": _Name, "Value": Nothing }
 
 
 
@@ -749,9 +748,9 @@ newGetDashboardInput' _DashboardName customize = (GetDashboardInput <<< customiz
 
 
 newtype GetDashboardOutput = GetDashboardOutput 
-  { "DashboardArn" :: NullOrUndefined (DashboardArn)
-  , "DashboardBody" :: NullOrUndefined (DashboardBody)
-  , "DashboardName" :: NullOrUndefined (DashboardName)
+  { "DashboardArn" :: Maybe (DashboardArn)
+  , "DashboardBody" :: Maybe (DashboardBody)
+  , "DashboardName" :: Maybe (DashboardName)
   }
 derive instance newtypeGetDashboardOutput :: Newtype GetDashboardOutput _
 derive instance repGenericGetDashboardOutput :: Generic GetDashboardOutput _
@@ -761,25 +760,25 @@ instance encodeGetDashboardOutput :: Encode GetDashboardOutput where encode = ge
 
 -- | Constructs GetDashboardOutput from required parameters
 newGetDashboardOutput :: GetDashboardOutput
-newGetDashboardOutput  = GetDashboardOutput { "DashboardArn": (NullOrUndefined Nothing), "DashboardBody": (NullOrUndefined Nothing), "DashboardName": (NullOrUndefined Nothing) }
+newGetDashboardOutput  = GetDashboardOutput { "DashboardArn": Nothing, "DashboardBody": Nothing, "DashboardName": Nothing }
 
 -- | Constructs GetDashboardOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDashboardOutput' :: ( { "DashboardArn" :: NullOrUndefined (DashboardArn) , "DashboardBody" :: NullOrUndefined (DashboardBody) , "DashboardName" :: NullOrUndefined (DashboardName) } -> {"DashboardArn" :: NullOrUndefined (DashboardArn) , "DashboardBody" :: NullOrUndefined (DashboardBody) , "DashboardName" :: NullOrUndefined (DashboardName) } ) -> GetDashboardOutput
-newGetDashboardOutput'  customize = (GetDashboardOutput <<< customize) { "DashboardArn": (NullOrUndefined Nothing), "DashboardBody": (NullOrUndefined Nothing), "DashboardName": (NullOrUndefined Nothing) }
+newGetDashboardOutput' :: ( { "DashboardArn" :: Maybe (DashboardArn) , "DashboardBody" :: Maybe (DashboardBody) , "DashboardName" :: Maybe (DashboardName) } -> {"DashboardArn" :: Maybe (DashboardArn) , "DashboardBody" :: Maybe (DashboardBody) , "DashboardName" :: Maybe (DashboardName) } ) -> GetDashboardOutput
+newGetDashboardOutput'  customize = (GetDashboardOutput <<< customize) { "DashboardArn": Nothing, "DashboardBody": Nothing, "DashboardName": Nothing }
 
 
 
 newtype GetMetricStatisticsInput = GetMetricStatisticsInput 
   { "Namespace" :: (Namespace)
   , "MetricName" :: (MetricName)
-  , "Dimensions" :: NullOrUndefined (Dimensions)
+  , "Dimensions" :: Maybe (Dimensions)
   , "StartTime" :: (Types.Timestamp)
   , "EndTime" :: (Types.Timestamp)
   , "Period" :: (Period)
-  , "Statistics" :: NullOrUndefined (Statistics)
-  , "ExtendedStatistics" :: NullOrUndefined (ExtendedStatistics)
-  , "Unit" :: NullOrUndefined (StandardUnit)
+  , "Statistics" :: Maybe (Statistics)
+  , "ExtendedStatistics" :: Maybe (ExtendedStatistics)
+  , "Unit" :: Maybe (StandardUnit)
   }
 derive instance newtypeGetMetricStatisticsInput :: Newtype GetMetricStatisticsInput _
 derive instance repGenericGetMetricStatisticsInput :: Generic GetMetricStatisticsInput _
@@ -789,18 +788,18 @@ instance encodeGetMetricStatisticsInput :: Encode GetMetricStatisticsInput where
 
 -- | Constructs GetMetricStatisticsInput from required parameters
 newGetMetricStatisticsInput :: Types.Timestamp -> MetricName -> Namespace -> Period -> Types.Timestamp -> GetMetricStatisticsInput
-newGetMetricStatisticsInput _EndTime _MetricName _Namespace _Period _StartTime = GetMetricStatisticsInput { "EndTime": _EndTime, "MetricName": _MetricName, "Namespace": _Namespace, "Period": _Period, "StartTime": _StartTime, "Dimensions": (NullOrUndefined Nothing), "ExtendedStatistics": (NullOrUndefined Nothing), "Statistics": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newGetMetricStatisticsInput _EndTime _MetricName _Namespace _Period _StartTime = GetMetricStatisticsInput { "EndTime": _EndTime, "MetricName": _MetricName, "Namespace": _Namespace, "Period": _Period, "StartTime": _StartTime, "Dimensions": Nothing, "ExtendedStatistics": Nothing, "Statistics": Nothing, "Unit": Nothing }
 
 -- | Constructs GetMetricStatisticsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetMetricStatisticsInput' :: Types.Timestamp -> MetricName -> Namespace -> Period -> Types.Timestamp -> ( { "Namespace" :: (Namespace) , "MetricName" :: (MetricName) , "Dimensions" :: NullOrUndefined (Dimensions) , "StartTime" :: (Types.Timestamp) , "EndTime" :: (Types.Timestamp) , "Period" :: (Period) , "Statistics" :: NullOrUndefined (Statistics) , "ExtendedStatistics" :: NullOrUndefined (ExtendedStatistics) , "Unit" :: NullOrUndefined (StandardUnit) } -> {"Namespace" :: (Namespace) , "MetricName" :: (MetricName) , "Dimensions" :: NullOrUndefined (Dimensions) , "StartTime" :: (Types.Timestamp) , "EndTime" :: (Types.Timestamp) , "Period" :: (Period) , "Statistics" :: NullOrUndefined (Statistics) , "ExtendedStatistics" :: NullOrUndefined (ExtendedStatistics) , "Unit" :: NullOrUndefined (StandardUnit) } ) -> GetMetricStatisticsInput
-newGetMetricStatisticsInput' _EndTime _MetricName _Namespace _Period _StartTime customize = (GetMetricStatisticsInput <<< customize) { "EndTime": _EndTime, "MetricName": _MetricName, "Namespace": _Namespace, "Period": _Period, "StartTime": _StartTime, "Dimensions": (NullOrUndefined Nothing), "ExtendedStatistics": (NullOrUndefined Nothing), "Statistics": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newGetMetricStatisticsInput' :: Types.Timestamp -> MetricName -> Namespace -> Period -> Types.Timestamp -> ( { "Namespace" :: (Namespace) , "MetricName" :: (MetricName) , "Dimensions" :: Maybe (Dimensions) , "StartTime" :: (Types.Timestamp) , "EndTime" :: (Types.Timestamp) , "Period" :: (Period) , "Statistics" :: Maybe (Statistics) , "ExtendedStatistics" :: Maybe (ExtendedStatistics) , "Unit" :: Maybe (StandardUnit) } -> {"Namespace" :: (Namespace) , "MetricName" :: (MetricName) , "Dimensions" :: Maybe (Dimensions) , "StartTime" :: (Types.Timestamp) , "EndTime" :: (Types.Timestamp) , "Period" :: (Period) , "Statistics" :: Maybe (Statistics) , "ExtendedStatistics" :: Maybe (ExtendedStatistics) , "Unit" :: Maybe (StandardUnit) } ) -> GetMetricStatisticsInput
+newGetMetricStatisticsInput' _EndTime _MetricName _Namespace _Period _StartTime customize = (GetMetricStatisticsInput <<< customize) { "EndTime": _EndTime, "MetricName": _MetricName, "Namespace": _Namespace, "Period": _Period, "StartTime": _StartTime, "Dimensions": Nothing, "ExtendedStatistics": Nothing, "Statistics": Nothing, "Unit": Nothing }
 
 
 
 newtype GetMetricStatisticsOutput = GetMetricStatisticsOutput 
-  { "Label" :: NullOrUndefined (MetricLabel)
-  , "Datapoints" :: NullOrUndefined (Datapoints)
+  { "Label" :: Maybe (MetricLabel)
+  , "Datapoints" :: Maybe (Datapoints)
   }
 derive instance newtypeGetMetricStatisticsOutput :: Newtype GetMetricStatisticsOutput _
 derive instance repGenericGetMetricStatisticsOutput :: Generic GetMetricStatisticsOutput _
@@ -810,12 +809,12 @@ instance encodeGetMetricStatisticsOutput :: Encode GetMetricStatisticsOutput whe
 
 -- | Constructs GetMetricStatisticsOutput from required parameters
 newGetMetricStatisticsOutput :: GetMetricStatisticsOutput
-newGetMetricStatisticsOutput  = GetMetricStatisticsOutput { "Datapoints": (NullOrUndefined Nothing), "Label": (NullOrUndefined Nothing) }
+newGetMetricStatisticsOutput  = GetMetricStatisticsOutput { "Datapoints": Nothing, "Label": Nothing }
 
 -- | Constructs GetMetricStatisticsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetMetricStatisticsOutput' :: ( { "Label" :: NullOrUndefined (MetricLabel) , "Datapoints" :: NullOrUndefined (Datapoints) } -> {"Label" :: NullOrUndefined (MetricLabel) , "Datapoints" :: NullOrUndefined (Datapoints) } ) -> GetMetricStatisticsOutput
-newGetMetricStatisticsOutput'  customize = (GetMetricStatisticsOutput <<< customize) { "Datapoints": (NullOrUndefined Nothing), "Label": (NullOrUndefined Nothing) }
+newGetMetricStatisticsOutput' :: ( { "Label" :: Maybe (MetricLabel) , "Datapoints" :: Maybe (Datapoints) } -> {"Label" :: Maybe (MetricLabel) , "Datapoints" :: Maybe (Datapoints) } ) -> GetMetricStatisticsOutput
+newGetMetricStatisticsOutput'  customize = (GetMetricStatisticsOutput <<< customize) { "Datapoints": Nothing, "Label": Nothing }
 
 
 
@@ -848,7 +847,7 @@ instance encodeHistorySummary :: Encode HistorySummary where encode = genericEnc
 
 -- | <p>Request processing has failed due to some unknown error, exception, or failure.</p>
 newtype InternalServiceFault = InternalServiceFault 
-  { "Message" :: NullOrUndefined (FaultDescription)
+  { "Message" :: Maybe (FaultDescription)
   }
 derive instance newtypeInternalServiceFault :: Newtype InternalServiceFault _
 derive instance repGenericInternalServiceFault :: Generic InternalServiceFault _
@@ -858,18 +857,18 @@ instance encodeInternalServiceFault :: Encode InternalServiceFault where encode 
 
 -- | Constructs InternalServiceFault from required parameters
 newInternalServiceFault :: InternalServiceFault
-newInternalServiceFault  = InternalServiceFault { "Message": (NullOrUndefined Nothing) }
+newInternalServiceFault  = InternalServiceFault { "Message": Nothing }
 
 -- | Constructs InternalServiceFault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalServiceFault' :: ( { "Message" :: NullOrUndefined (FaultDescription) } -> {"Message" :: NullOrUndefined (FaultDescription) } ) -> InternalServiceFault
-newInternalServiceFault'  customize = (InternalServiceFault <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInternalServiceFault' :: ( { "Message" :: Maybe (FaultDescription) } -> {"Message" :: Maybe (FaultDescription) } ) -> InternalServiceFault
+newInternalServiceFault'  customize = (InternalServiceFault <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Data was not syntactically valid JSON.</p>
 newtype InvalidFormatFault = InvalidFormatFault 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeInvalidFormatFault :: Newtype InvalidFormatFault _
 derive instance repGenericInvalidFormatFault :: Generic InvalidFormatFault _
@@ -879,18 +878,18 @@ instance encodeInvalidFormatFault :: Encode InvalidFormatFault where encode = ge
 
 -- | Constructs InvalidFormatFault from required parameters
 newInvalidFormatFault :: InvalidFormatFault
-newInvalidFormatFault  = InvalidFormatFault { "message": (NullOrUndefined Nothing) }
+newInvalidFormatFault  = InvalidFormatFault { "message": Nothing }
 
 -- | Constructs InvalidFormatFault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidFormatFault' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> InvalidFormatFault
-newInvalidFormatFault'  customize = (InvalidFormatFault <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidFormatFault' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> InvalidFormatFault
+newInvalidFormatFault'  customize = (InvalidFormatFault <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The next token specified is invalid.</p>
 newtype InvalidNextToken = InvalidNextToken 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeInvalidNextToken :: Newtype InvalidNextToken _
 derive instance repGenericInvalidNextToken :: Generic InvalidNextToken _
@@ -900,18 +899,18 @@ instance encodeInvalidNextToken :: Encode InvalidNextToken where encode = generi
 
 -- | Constructs InvalidNextToken from required parameters
 newInvalidNextToken :: InvalidNextToken
-newInvalidNextToken  = InvalidNextToken { "message": (NullOrUndefined Nothing) }
+newInvalidNextToken  = InvalidNextToken { "message": Nothing }
 
 -- | Constructs InvalidNextToken's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidNextToken' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> InvalidNextToken
-newInvalidNextToken'  customize = (InvalidNextToken <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidNextToken' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> InvalidNextToken
+newInvalidNextToken'  customize = (InvalidNextToken <<< customize) { "message": Nothing }
 
 
 
 -- | <p>Parameters were used together that cannot be used together.</p>
 newtype InvalidParameterCombinationException = InvalidParameterCombinationException 
-  { "message" :: NullOrUndefined (AwsQueryErrorMessage)
+  { "message" :: Maybe (AwsQueryErrorMessage)
   }
 derive instance newtypeInvalidParameterCombinationException :: Newtype InvalidParameterCombinationException _
 derive instance repGenericInvalidParameterCombinationException :: Generic InvalidParameterCombinationException _
@@ -921,18 +920,18 @@ instance encodeInvalidParameterCombinationException :: Encode InvalidParameterCo
 
 -- | Constructs InvalidParameterCombinationException from required parameters
 newInvalidParameterCombinationException :: InvalidParameterCombinationException
-newInvalidParameterCombinationException  = InvalidParameterCombinationException { "message": (NullOrUndefined Nothing) }
+newInvalidParameterCombinationException  = InvalidParameterCombinationException { "message": Nothing }
 
 -- | Constructs InvalidParameterCombinationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidParameterCombinationException' :: ( { "message" :: NullOrUndefined (AwsQueryErrorMessage) } -> {"message" :: NullOrUndefined (AwsQueryErrorMessage) } ) -> InvalidParameterCombinationException
-newInvalidParameterCombinationException'  customize = (InvalidParameterCombinationException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidParameterCombinationException' :: ( { "message" :: Maybe (AwsQueryErrorMessage) } -> {"message" :: Maybe (AwsQueryErrorMessage) } ) -> InvalidParameterCombinationException
+newInvalidParameterCombinationException'  customize = (InvalidParameterCombinationException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The value of an input parameter is bad or out-of-range.</p>
 newtype InvalidParameterValueException = InvalidParameterValueException 
-  { "message" :: NullOrUndefined (AwsQueryErrorMessage)
+  { "message" :: Maybe (AwsQueryErrorMessage)
   }
 derive instance newtypeInvalidParameterValueException :: Newtype InvalidParameterValueException _
 derive instance repGenericInvalidParameterValueException :: Generic InvalidParameterValueException _
@@ -942,12 +941,12 @@ instance encodeInvalidParameterValueException :: Encode InvalidParameterValueExc
 
 -- | Constructs InvalidParameterValueException from required parameters
 newInvalidParameterValueException :: InvalidParameterValueException
-newInvalidParameterValueException  = InvalidParameterValueException { "message": (NullOrUndefined Nothing) }
+newInvalidParameterValueException  = InvalidParameterValueException { "message": Nothing }
 
 -- | Constructs InvalidParameterValueException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidParameterValueException' :: ( { "message" :: NullOrUndefined (AwsQueryErrorMessage) } -> {"message" :: NullOrUndefined (AwsQueryErrorMessage) } ) -> InvalidParameterValueException
-newInvalidParameterValueException'  customize = (InvalidParameterValueException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidParameterValueException' :: ( { "message" :: Maybe (AwsQueryErrorMessage) } -> {"message" :: Maybe (AwsQueryErrorMessage) } ) -> InvalidParameterValueException
+newInvalidParameterValueException'  customize = (InvalidParameterValueException <<< customize) { "message": Nothing }
 
 
 
@@ -962,7 +961,7 @@ instance encodeLastModified :: Encode LastModified where encode = genericEncode 
 
 -- | <p>The quota for alarms for this customer has already been reached.</p>
 newtype LimitExceededFault = LimitExceededFault 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeLimitExceededFault :: Newtype LimitExceededFault _
 derive instance repGenericLimitExceededFault :: Generic LimitExceededFault _
@@ -972,18 +971,18 @@ instance encodeLimitExceededFault :: Encode LimitExceededFault where encode = ge
 
 -- | Constructs LimitExceededFault from required parameters
 newLimitExceededFault :: LimitExceededFault
-newLimitExceededFault  = LimitExceededFault { "message": (NullOrUndefined Nothing) }
+newLimitExceededFault  = LimitExceededFault { "message": Nothing }
 
 -- | Constructs LimitExceededFault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLimitExceededFault' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> LimitExceededFault
-newLimitExceededFault'  customize = (LimitExceededFault <<< customize) { "message": (NullOrUndefined Nothing) }
+newLimitExceededFault' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> LimitExceededFault
+newLimitExceededFault'  customize = (LimitExceededFault <<< customize) { "message": Nothing }
 
 
 
 newtype ListDashboardsInput = ListDashboardsInput 
-  { "DashboardNamePrefix" :: NullOrUndefined (DashboardNamePrefix)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "DashboardNamePrefix" :: Maybe (DashboardNamePrefix)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListDashboardsInput :: Newtype ListDashboardsInput _
 derive instance repGenericListDashboardsInput :: Generic ListDashboardsInput _
@@ -993,18 +992,18 @@ instance encodeListDashboardsInput :: Encode ListDashboardsInput where encode = 
 
 -- | Constructs ListDashboardsInput from required parameters
 newListDashboardsInput :: ListDashboardsInput
-newListDashboardsInput  = ListDashboardsInput { "DashboardNamePrefix": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDashboardsInput  = ListDashboardsInput { "DashboardNamePrefix": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListDashboardsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDashboardsInput' :: ( { "DashboardNamePrefix" :: NullOrUndefined (DashboardNamePrefix) , "NextToken" :: NullOrUndefined (NextToken) } -> {"DashboardNamePrefix" :: NullOrUndefined (DashboardNamePrefix) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListDashboardsInput
-newListDashboardsInput'  customize = (ListDashboardsInput <<< customize) { "DashboardNamePrefix": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDashboardsInput' :: ( { "DashboardNamePrefix" :: Maybe (DashboardNamePrefix) , "NextToken" :: Maybe (NextToken) } -> {"DashboardNamePrefix" :: Maybe (DashboardNamePrefix) , "NextToken" :: Maybe (NextToken) } ) -> ListDashboardsInput
+newListDashboardsInput'  customize = (ListDashboardsInput <<< customize) { "DashboardNamePrefix": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListDashboardsOutput = ListDashboardsOutput 
-  { "DashboardEntries" :: NullOrUndefined (DashboardEntries)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "DashboardEntries" :: Maybe (DashboardEntries)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListDashboardsOutput :: Newtype ListDashboardsOutput _
 derive instance repGenericListDashboardsOutput :: Generic ListDashboardsOutput _
@@ -1014,20 +1013,20 @@ instance encodeListDashboardsOutput :: Encode ListDashboardsOutput where encode 
 
 -- | Constructs ListDashboardsOutput from required parameters
 newListDashboardsOutput :: ListDashboardsOutput
-newListDashboardsOutput  = ListDashboardsOutput { "DashboardEntries": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDashboardsOutput  = ListDashboardsOutput { "DashboardEntries": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListDashboardsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDashboardsOutput' :: ( { "DashboardEntries" :: NullOrUndefined (DashboardEntries) , "NextToken" :: NullOrUndefined (NextToken) } -> {"DashboardEntries" :: NullOrUndefined (DashboardEntries) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListDashboardsOutput
-newListDashboardsOutput'  customize = (ListDashboardsOutput <<< customize) { "DashboardEntries": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDashboardsOutput' :: ( { "DashboardEntries" :: Maybe (DashboardEntries) , "NextToken" :: Maybe (NextToken) } -> {"DashboardEntries" :: Maybe (DashboardEntries) , "NextToken" :: Maybe (NextToken) } ) -> ListDashboardsOutput
+newListDashboardsOutput'  customize = (ListDashboardsOutput <<< customize) { "DashboardEntries": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListMetricsInput = ListMetricsInput 
-  { "Namespace" :: NullOrUndefined (Namespace)
-  , "MetricName" :: NullOrUndefined (MetricName)
-  , "Dimensions" :: NullOrUndefined (DimensionFilters)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Namespace" :: Maybe (Namespace)
+  , "MetricName" :: Maybe (MetricName)
+  , "Dimensions" :: Maybe (DimensionFilters)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListMetricsInput :: Newtype ListMetricsInput _
 derive instance repGenericListMetricsInput :: Generic ListMetricsInput _
@@ -1037,18 +1036,18 @@ instance encodeListMetricsInput :: Encode ListMetricsInput where encode = generi
 
 -- | Constructs ListMetricsInput from required parameters
 newListMetricsInput :: ListMetricsInput
-newListMetricsInput  = ListMetricsInput { "Dimensions": (NullOrUndefined Nothing), "MetricName": (NullOrUndefined Nothing), "Namespace": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListMetricsInput  = ListMetricsInput { "Dimensions": Nothing, "MetricName": Nothing, "Namespace": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListMetricsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListMetricsInput' :: ( { "Namespace" :: NullOrUndefined (Namespace) , "MetricName" :: NullOrUndefined (MetricName) , "Dimensions" :: NullOrUndefined (DimensionFilters) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Namespace" :: NullOrUndefined (Namespace) , "MetricName" :: NullOrUndefined (MetricName) , "Dimensions" :: NullOrUndefined (DimensionFilters) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListMetricsInput
-newListMetricsInput'  customize = (ListMetricsInput <<< customize) { "Dimensions": (NullOrUndefined Nothing), "MetricName": (NullOrUndefined Nothing), "Namespace": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListMetricsInput' :: ( { "Namespace" :: Maybe (Namespace) , "MetricName" :: Maybe (MetricName) , "Dimensions" :: Maybe (DimensionFilters) , "NextToken" :: Maybe (NextToken) } -> {"Namespace" :: Maybe (Namespace) , "MetricName" :: Maybe (MetricName) , "Dimensions" :: Maybe (DimensionFilters) , "NextToken" :: Maybe (NextToken) } ) -> ListMetricsInput
+newListMetricsInput'  customize = (ListMetricsInput <<< customize) { "Dimensions": Nothing, "MetricName": Nothing, "Namespace": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListMetricsOutput = ListMetricsOutput 
-  { "Metrics" :: NullOrUndefined (Metrics)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Metrics" :: Maybe (Metrics)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListMetricsOutput :: Newtype ListMetricsOutput _
 derive instance repGenericListMetricsOutput :: Generic ListMetricsOutput _
@@ -1058,12 +1057,12 @@ instance encodeListMetricsOutput :: Encode ListMetricsOutput where encode = gene
 
 -- | Constructs ListMetricsOutput from required parameters
 newListMetricsOutput :: ListMetricsOutput
-newListMetricsOutput  = ListMetricsOutput { "Metrics": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListMetricsOutput  = ListMetricsOutput { "Metrics": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListMetricsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListMetricsOutput' :: ( { "Metrics" :: NullOrUndefined (Metrics) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Metrics" :: NullOrUndefined (Metrics) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListMetricsOutput
-newListMetricsOutput'  customize = (ListMetricsOutput <<< customize) { "Metrics": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListMetricsOutput' :: ( { "Metrics" :: Maybe (Metrics) , "NextToken" :: Maybe (NextToken) } -> {"Metrics" :: Maybe (Metrics) , "NextToken" :: Maybe (NextToken) } ) -> ListMetricsOutput
+newListMetricsOutput'  customize = (ListMetricsOutput <<< customize) { "Metrics": Nothing, "NextToken": Nothing }
 
 
 
@@ -1087,9 +1086,9 @@ instance encodeMessage :: Encode Message where encode = genericEncode options
 
 -- | <p>Represents a specific metric.</p>
 newtype Metric = Metric 
-  { "Namespace" :: NullOrUndefined (Namespace)
-  , "MetricName" :: NullOrUndefined (MetricName)
-  , "Dimensions" :: NullOrUndefined (Dimensions)
+  { "Namespace" :: Maybe (Namespace)
+  , "MetricName" :: Maybe (MetricName)
+  , "Dimensions" :: Maybe (Dimensions)
   }
 derive instance newtypeMetric :: Newtype Metric _
 derive instance repGenericMetric :: Generic Metric _
@@ -1099,42 +1098,42 @@ instance encodeMetric :: Encode Metric where encode = genericEncode options
 
 -- | Constructs Metric from required parameters
 newMetric :: Metric
-newMetric  = Metric { "Dimensions": (NullOrUndefined Nothing), "MetricName": (NullOrUndefined Nothing), "Namespace": (NullOrUndefined Nothing) }
+newMetric  = Metric { "Dimensions": Nothing, "MetricName": Nothing, "Namespace": Nothing }
 
 -- | Constructs Metric's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMetric' :: ( { "Namespace" :: NullOrUndefined (Namespace) , "MetricName" :: NullOrUndefined (MetricName) , "Dimensions" :: NullOrUndefined (Dimensions) } -> {"Namespace" :: NullOrUndefined (Namespace) , "MetricName" :: NullOrUndefined (MetricName) , "Dimensions" :: NullOrUndefined (Dimensions) } ) -> Metric
-newMetric'  customize = (Metric <<< customize) { "Dimensions": (NullOrUndefined Nothing), "MetricName": (NullOrUndefined Nothing), "Namespace": (NullOrUndefined Nothing) }
+newMetric' :: ( { "Namespace" :: Maybe (Namespace) , "MetricName" :: Maybe (MetricName) , "Dimensions" :: Maybe (Dimensions) } -> {"Namespace" :: Maybe (Namespace) , "MetricName" :: Maybe (MetricName) , "Dimensions" :: Maybe (Dimensions) } ) -> Metric
+newMetric'  customize = (Metric <<< customize) { "Dimensions": Nothing, "MetricName": Nothing, "Namespace": Nothing }
 
 
 
 -- | <p>Represents an alarm.</p>
 newtype MetricAlarm = MetricAlarm 
-  { "AlarmName" :: NullOrUndefined (AlarmName)
-  , "AlarmArn" :: NullOrUndefined (AlarmArn)
-  , "AlarmDescription" :: NullOrUndefined (AlarmDescription)
-  , "AlarmConfigurationUpdatedTimestamp" :: NullOrUndefined (Types.Timestamp)
-  , "ActionsEnabled" :: NullOrUndefined (ActionsEnabled)
-  , "OKActions" :: NullOrUndefined (ResourceList)
-  , "AlarmActions" :: NullOrUndefined (ResourceList)
-  , "InsufficientDataActions" :: NullOrUndefined (ResourceList)
-  , "StateValue" :: NullOrUndefined (StateValue)
-  , "StateReason" :: NullOrUndefined (StateReason)
-  , "StateReasonData" :: NullOrUndefined (StateReasonData)
-  , "StateUpdatedTimestamp" :: NullOrUndefined (Types.Timestamp)
-  , "MetricName" :: NullOrUndefined (MetricName)
-  , "Namespace" :: NullOrUndefined (Namespace)
-  , "Statistic" :: NullOrUndefined (Statistic)
-  , "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic)
-  , "Dimensions" :: NullOrUndefined (Dimensions)
-  , "Period" :: NullOrUndefined (Period)
-  , "Unit" :: NullOrUndefined (StandardUnit)
-  , "EvaluationPeriods" :: NullOrUndefined (EvaluationPeriods)
-  , "DatapointsToAlarm" :: NullOrUndefined (DatapointsToAlarm)
-  , "Threshold" :: NullOrUndefined (Threshold)
-  , "ComparisonOperator" :: NullOrUndefined (ComparisonOperator)
-  , "TreatMissingData" :: NullOrUndefined (TreatMissingData)
-  , "EvaluateLowSampleCountPercentile" :: NullOrUndefined (EvaluateLowSampleCountPercentile)
+  { "AlarmName" :: Maybe (AlarmName)
+  , "AlarmArn" :: Maybe (AlarmArn)
+  , "AlarmDescription" :: Maybe (AlarmDescription)
+  , "AlarmConfigurationUpdatedTimestamp" :: Maybe (Types.Timestamp)
+  , "ActionsEnabled" :: Maybe (ActionsEnabled)
+  , "OKActions" :: Maybe (ResourceList)
+  , "AlarmActions" :: Maybe (ResourceList)
+  , "InsufficientDataActions" :: Maybe (ResourceList)
+  , "StateValue" :: Maybe (StateValue)
+  , "StateReason" :: Maybe (StateReason)
+  , "StateReasonData" :: Maybe (StateReasonData)
+  , "StateUpdatedTimestamp" :: Maybe (Types.Timestamp)
+  , "MetricName" :: Maybe (MetricName)
+  , "Namespace" :: Maybe (Namespace)
+  , "Statistic" :: Maybe (Statistic)
+  , "ExtendedStatistic" :: Maybe (ExtendedStatistic)
+  , "Dimensions" :: Maybe (Dimensions)
+  , "Period" :: Maybe (Period)
+  , "Unit" :: Maybe (StandardUnit)
+  , "EvaluationPeriods" :: Maybe (EvaluationPeriods)
+  , "DatapointsToAlarm" :: Maybe (DatapointsToAlarm)
+  , "Threshold" :: Maybe (Threshold)
+  , "ComparisonOperator" :: Maybe (ComparisonOperator)
+  , "TreatMissingData" :: Maybe (TreatMissingData)
+  , "EvaluateLowSampleCountPercentile" :: Maybe (EvaluateLowSampleCountPercentile)
   }
 derive instance newtypeMetricAlarm :: Newtype MetricAlarm _
 derive instance repGenericMetricAlarm :: Generic MetricAlarm _
@@ -1144,12 +1143,12 @@ instance encodeMetricAlarm :: Encode MetricAlarm where encode = genericEncode op
 
 -- | Constructs MetricAlarm from required parameters
 newMetricAlarm :: MetricAlarm
-newMetricAlarm  = MetricAlarm { "ActionsEnabled": (NullOrUndefined Nothing), "AlarmActions": (NullOrUndefined Nothing), "AlarmArn": (NullOrUndefined Nothing), "AlarmConfigurationUpdatedTimestamp": (NullOrUndefined Nothing), "AlarmDescription": (NullOrUndefined Nothing), "AlarmName": (NullOrUndefined Nothing), "ComparisonOperator": (NullOrUndefined Nothing), "DatapointsToAlarm": (NullOrUndefined Nothing), "Dimensions": (NullOrUndefined Nothing), "EvaluateLowSampleCountPercentile": (NullOrUndefined Nothing), "EvaluationPeriods": (NullOrUndefined Nothing), "ExtendedStatistic": (NullOrUndefined Nothing), "InsufficientDataActions": (NullOrUndefined Nothing), "MetricName": (NullOrUndefined Nothing), "Namespace": (NullOrUndefined Nothing), "OKActions": (NullOrUndefined Nothing), "Period": (NullOrUndefined Nothing), "StateReason": (NullOrUndefined Nothing), "StateReasonData": (NullOrUndefined Nothing), "StateUpdatedTimestamp": (NullOrUndefined Nothing), "StateValue": (NullOrUndefined Nothing), "Statistic": (NullOrUndefined Nothing), "Threshold": (NullOrUndefined Nothing), "TreatMissingData": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newMetricAlarm  = MetricAlarm { "ActionsEnabled": Nothing, "AlarmActions": Nothing, "AlarmArn": Nothing, "AlarmConfigurationUpdatedTimestamp": Nothing, "AlarmDescription": Nothing, "AlarmName": Nothing, "ComparisonOperator": Nothing, "DatapointsToAlarm": Nothing, "Dimensions": Nothing, "EvaluateLowSampleCountPercentile": Nothing, "EvaluationPeriods": Nothing, "ExtendedStatistic": Nothing, "InsufficientDataActions": Nothing, "MetricName": Nothing, "Namespace": Nothing, "OKActions": Nothing, "Period": Nothing, "StateReason": Nothing, "StateReasonData": Nothing, "StateUpdatedTimestamp": Nothing, "StateValue": Nothing, "Statistic": Nothing, "Threshold": Nothing, "TreatMissingData": Nothing, "Unit": Nothing }
 
 -- | Constructs MetricAlarm's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMetricAlarm' :: ( { "AlarmName" :: NullOrUndefined (AlarmName) , "AlarmArn" :: NullOrUndefined (AlarmArn) , "AlarmDescription" :: NullOrUndefined (AlarmDescription) , "AlarmConfigurationUpdatedTimestamp" :: NullOrUndefined (Types.Timestamp) , "ActionsEnabled" :: NullOrUndefined (ActionsEnabled) , "OKActions" :: NullOrUndefined (ResourceList) , "AlarmActions" :: NullOrUndefined (ResourceList) , "InsufficientDataActions" :: NullOrUndefined (ResourceList) , "StateValue" :: NullOrUndefined (StateValue) , "StateReason" :: NullOrUndefined (StateReason) , "StateReasonData" :: NullOrUndefined (StateReasonData) , "StateUpdatedTimestamp" :: NullOrUndefined (Types.Timestamp) , "MetricName" :: NullOrUndefined (MetricName) , "Namespace" :: NullOrUndefined (Namespace) , "Statistic" :: NullOrUndefined (Statistic) , "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic) , "Dimensions" :: NullOrUndefined (Dimensions) , "Period" :: NullOrUndefined (Period) , "Unit" :: NullOrUndefined (StandardUnit) , "EvaluationPeriods" :: NullOrUndefined (EvaluationPeriods) , "DatapointsToAlarm" :: NullOrUndefined (DatapointsToAlarm) , "Threshold" :: NullOrUndefined (Threshold) , "ComparisonOperator" :: NullOrUndefined (ComparisonOperator) , "TreatMissingData" :: NullOrUndefined (TreatMissingData) , "EvaluateLowSampleCountPercentile" :: NullOrUndefined (EvaluateLowSampleCountPercentile) } -> {"AlarmName" :: NullOrUndefined (AlarmName) , "AlarmArn" :: NullOrUndefined (AlarmArn) , "AlarmDescription" :: NullOrUndefined (AlarmDescription) , "AlarmConfigurationUpdatedTimestamp" :: NullOrUndefined (Types.Timestamp) , "ActionsEnabled" :: NullOrUndefined (ActionsEnabled) , "OKActions" :: NullOrUndefined (ResourceList) , "AlarmActions" :: NullOrUndefined (ResourceList) , "InsufficientDataActions" :: NullOrUndefined (ResourceList) , "StateValue" :: NullOrUndefined (StateValue) , "StateReason" :: NullOrUndefined (StateReason) , "StateReasonData" :: NullOrUndefined (StateReasonData) , "StateUpdatedTimestamp" :: NullOrUndefined (Types.Timestamp) , "MetricName" :: NullOrUndefined (MetricName) , "Namespace" :: NullOrUndefined (Namespace) , "Statistic" :: NullOrUndefined (Statistic) , "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic) , "Dimensions" :: NullOrUndefined (Dimensions) , "Period" :: NullOrUndefined (Period) , "Unit" :: NullOrUndefined (StandardUnit) , "EvaluationPeriods" :: NullOrUndefined (EvaluationPeriods) , "DatapointsToAlarm" :: NullOrUndefined (DatapointsToAlarm) , "Threshold" :: NullOrUndefined (Threshold) , "ComparisonOperator" :: NullOrUndefined (ComparisonOperator) , "TreatMissingData" :: NullOrUndefined (TreatMissingData) , "EvaluateLowSampleCountPercentile" :: NullOrUndefined (EvaluateLowSampleCountPercentile) } ) -> MetricAlarm
-newMetricAlarm'  customize = (MetricAlarm <<< customize) { "ActionsEnabled": (NullOrUndefined Nothing), "AlarmActions": (NullOrUndefined Nothing), "AlarmArn": (NullOrUndefined Nothing), "AlarmConfigurationUpdatedTimestamp": (NullOrUndefined Nothing), "AlarmDescription": (NullOrUndefined Nothing), "AlarmName": (NullOrUndefined Nothing), "ComparisonOperator": (NullOrUndefined Nothing), "DatapointsToAlarm": (NullOrUndefined Nothing), "Dimensions": (NullOrUndefined Nothing), "EvaluateLowSampleCountPercentile": (NullOrUndefined Nothing), "EvaluationPeriods": (NullOrUndefined Nothing), "ExtendedStatistic": (NullOrUndefined Nothing), "InsufficientDataActions": (NullOrUndefined Nothing), "MetricName": (NullOrUndefined Nothing), "Namespace": (NullOrUndefined Nothing), "OKActions": (NullOrUndefined Nothing), "Period": (NullOrUndefined Nothing), "StateReason": (NullOrUndefined Nothing), "StateReasonData": (NullOrUndefined Nothing), "StateUpdatedTimestamp": (NullOrUndefined Nothing), "StateValue": (NullOrUndefined Nothing), "Statistic": (NullOrUndefined Nothing), "Threshold": (NullOrUndefined Nothing), "TreatMissingData": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newMetricAlarm' :: ( { "AlarmName" :: Maybe (AlarmName) , "AlarmArn" :: Maybe (AlarmArn) , "AlarmDescription" :: Maybe (AlarmDescription) , "AlarmConfigurationUpdatedTimestamp" :: Maybe (Types.Timestamp) , "ActionsEnabled" :: Maybe (ActionsEnabled) , "OKActions" :: Maybe (ResourceList) , "AlarmActions" :: Maybe (ResourceList) , "InsufficientDataActions" :: Maybe (ResourceList) , "StateValue" :: Maybe (StateValue) , "StateReason" :: Maybe (StateReason) , "StateReasonData" :: Maybe (StateReasonData) , "StateUpdatedTimestamp" :: Maybe (Types.Timestamp) , "MetricName" :: Maybe (MetricName) , "Namespace" :: Maybe (Namespace) , "Statistic" :: Maybe (Statistic) , "ExtendedStatistic" :: Maybe (ExtendedStatistic) , "Dimensions" :: Maybe (Dimensions) , "Period" :: Maybe (Period) , "Unit" :: Maybe (StandardUnit) , "EvaluationPeriods" :: Maybe (EvaluationPeriods) , "DatapointsToAlarm" :: Maybe (DatapointsToAlarm) , "Threshold" :: Maybe (Threshold) , "ComparisonOperator" :: Maybe (ComparisonOperator) , "TreatMissingData" :: Maybe (TreatMissingData) , "EvaluateLowSampleCountPercentile" :: Maybe (EvaluateLowSampleCountPercentile) } -> {"AlarmName" :: Maybe (AlarmName) , "AlarmArn" :: Maybe (AlarmArn) , "AlarmDescription" :: Maybe (AlarmDescription) , "AlarmConfigurationUpdatedTimestamp" :: Maybe (Types.Timestamp) , "ActionsEnabled" :: Maybe (ActionsEnabled) , "OKActions" :: Maybe (ResourceList) , "AlarmActions" :: Maybe (ResourceList) , "InsufficientDataActions" :: Maybe (ResourceList) , "StateValue" :: Maybe (StateValue) , "StateReason" :: Maybe (StateReason) , "StateReasonData" :: Maybe (StateReasonData) , "StateUpdatedTimestamp" :: Maybe (Types.Timestamp) , "MetricName" :: Maybe (MetricName) , "Namespace" :: Maybe (Namespace) , "Statistic" :: Maybe (Statistic) , "ExtendedStatistic" :: Maybe (ExtendedStatistic) , "Dimensions" :: Maybe (Dimensions) , "Period" :: Maybe (Period) , "Unit" :: Maybe (StandardUnit) , "EvaluationPeriods" :: Maybe (EvaluationPeriods) , "DatapointsToAlarm" :: Maybe (DatapointsToAlarm) , "Threshold" :: Maybe (Threshold) , "ComparisonOperator" :: Maybe (ComparisonOperator) , "TreatMissingData" :: Maybe (TreatMissingData) , "EvaluateLowSampleCountPercentile" :: Maybe (EvaluateLowSampleCountPercentile) } ) -> MetricAlarm
+newMetricAlarm'  customize = (MetricAlarm <<< customize) { "ActionsEnabled": Nothing, "AlarmActions": Nothing, "AlarmArn": Nothing, "AlarmConfigurationUpdatedTimestamp": Nothing, "AlarmDescription": Nothing, "AlarmName": Nothing, "ComparisonOperator": Nothing, "DatapointsToAlarm": Nothing, "Dimensions": Nothing, "EvaluateLowSampleCountPercentile": Nothing, "EvaluationPeriods": Nothing, "ExtendedStatistic": Nothing, "InsufficientDataActions": Nothing, "MetricName": Nothing, "Namespace": Nothing, "OKActions": Nothing, "Period": Nothing, "StateReason": Nothing, "StateReasonData": Nothing, "StateUpdatedTimestamp": Nothing, "StateValue": Nothing, "Statistic": Nothing, "Threshold": Nothing, "TreatMissingData": Nothing, "Unit": Nothing }
 
 
 
@@ -1174,12 +1173,12 @@ instance encodeMetricData :: Encode MetricData where encode = genericEncode opti
 -- | <p>Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric.</p>
 newtype MetricDatum = MetricDatum 
   { "MetricName" :: (MetricName)
-  , "Dimensions" :: NullOrUndefined (Dimensions)
-  , "Timestamp" :: NullOrUndefined (Types.Timestamp)
-  , "Value" :: NullOrUndefined (DatapointValue)
-  , "StatisticValues" :: NullOrUndefined (StatisticSet)
-  , "Unit" :: NullOrUndefined (StandardUnit)
-  , "StorageResolution" :: NullOrUndefined (StorageResolution)
+  , "Dimensions" :: Maybe (Dimensions)
+  , "Timestamp" :: Maybe (Types.Timestamp)
+  , "Value" :: Maybe (DatapointValue)
+  , "StatisticValues" :: Maybe (StatisticSet)
+  , "Unit" :: Maybe (StandardUnit)
+  , "StorageResolution" :: Maybe (StorageResolution)
   }
 derive instance newtypeMetricDatum :: Newtype MetricDatum _
 derive instance repGenericMetricDatum :: Generic MetricDatum _
@@ -1189,12 +1188,12 @@ instance encodeMetricDatum :: Encode MetricDatum where encode = genericEncode op
 
 -- | Constructs MetricDatum from required parameters
 newMetricDatum :: MetricName -> MetricDatum
-newMetricDatum _MetricName = MetricDatum { "MetricName": _MetricName, "Dimensions": (NullOrUndefined Nothing), "StatisticValues": (NullOrUndefined Nothing), "StorageResolution": (NullOrUndefined Nothing), "Timestamp": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newMetricDatum _MetricName = MetricDatum { "MetricName": _MetricName, "Dimensions": Nothing, "StatisticValues": Nothing, "StorageResolution": Nothing, "Timestamp": Nothing, "Unit": Nothing, "Value": Nothing }
 
 -- | Constructs MetricDatum's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMetricDatum' :: MetricName -> ( { "MetricName" :: (MetricName) , "Dimensions" :: NullOrUndefined (Dimensions) , "Timestamp" :: NullOrUndefined (Types.Timestamp) , "Value" :: NullOrUndefined (DatapointValue) , "StatisticValues" :: NullOrUndefined (StatisticSet) , "Unit" :: NullOrUndefined (StandardUnit) , "StorageResolution" :: NullOrUndefined (StorageResolution) } -> {"MetricName" :: (MetricName) , "Dimensions" :: NullOrUndefined (Dimensions) , "Timestamp" :: NullOrUndefined (Types.Timestamp) , "Value" :: NullOrUndefined (DatapointValue) , "StatisticValues" :: NullOrUndefined (StatisticSet) , "Unit" :: NullOrUndefined (StandardUnit) , "StorageResolution" :: NullOrUndefined (StorageResolution) } ) -> MetricDatum
-newMetricDatum' _MetricName customize = (MetricDatum <<< customize) { "MetricName": _MetricName, "Dimensions": (NullOrUndefined Nothing), "StatisticValues": (NullOrUndefined Nothing), "StorageResolution": (NullOrUndefined Nothing), "Timestamp": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newMetricDatum' :: MetricName -> ( { "MetricName" :: (MetricName) , "Dimensions" :: Maybe (Dimensions) , "Timestamp" :: Maybe (Types.Timestamp) , "Value" :: Maybe (DatapointValue) , "StatisticValues" :: Maybe (StatisticSet) , "Unit" :: Maybe (StandardUnit) , "StorageResolution" :: Maybe (StorageResolution) } -> {"MetricName" :: (MetricName) , "Dimensions" :: Maybe (Dimensions) , "Timestamp" :: Maybe (Types.Timestamp) , "Value" :: Maybe (DatapointValue) , "StatisticValues" :: Maybe (StatisticSet) , "Unit" :: Maybe (StandardUnit) , "StorageResolution" :: Maybe (StorageResolution) } ) -> MetricDatum
+newMetricDatum' _MetricName customize = (MetricDatum <<< customize) { "MetricName": _MetricName, "Dimensions": Nothing, "StatisticValues": Nothing, "StorageResolution": Nothing, "Timestamp": Nothing, "Unit": Nothing, "Value": Nothing }
 
 
 
@@ -1227,7 +1226,7 @@ instance encodeMetrics :: Encode Metrics where encode = genericEncode options
 
 -- | <p>An input parameter that is required is missing.</p>
 newtype MissingRequiredParameterException = MissingRequiredParameterException 
-  { "message" :: NullOrUndefined (AwsQueryErrorMessage)
+  { "message" :: Maybe (AwsQueryErrorMessage)
   }
 derive instance newtypeMissingRequiredParameterException :: Newtype MissingRequiredParameterException _
 derive instance repGenericMissingRequiredParameterException :: Generic MissingRequiredParameterException _
@@ -1237,12 +1236,12 @@ instance encodeMissingRequiredParameterException :: Encode MissingRequiredParame
 
 -- | Constructs MissingRequiredParameterException from required parameters
 newMissingRequiredParameterException :: MissingRequiredParameterException
-newMissingRequiredParameterException  = MissingRequiredParameterException { "message": (NullOrUndefined Nothing) }
+newMissingRequiredParameterException  = MissingRequiredParameterException { "message": Nothing }
 
 -- | Constructs MissingRequiredParameterException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMissingRequiredParameterException' :: ( { "message" :: NullOrUndefined (AwsQueryErrorMessage) } -> {"message" :: NullOrUndefined (AwsQueryErrorMessage) } ) -> MissingRequiredParameterException
-newMissingRequiredParameterException'  customize = (MissingRequiredParameterException <<< customize) { "message": (NullOrUndefined Nothing) }
+newMissingRequiredParameterException' :: ( { "message" :: Maybe (AwsQueryErrorMessage) } -> {"message" :: Maybe (AwsQueryErrorMessage) } ) -> MissingRequiredParameterException
+newMissingRequiredParameterException'  customize = (MissingRequiredParameterException <<< customize) { "message": Nothing }
 
 
 
@@ -1295,7 +1294,7 @@ newPutDashboardInput' _DashboardBody _DashboardName customize = (PutDashboardInp
 
 
 newtype PutDashboardOutput = PutDashboardOutput 
-  { "DashboardValidationMessages" :: NullOrUndefined (DashboardValidationMessages)
+  { "DashboardValidationMessages" :: Maybe (DashboardValidationMessages)
   }
 derive instance newtypePutDashboardOutput :: Newtype PutDashboardOutput _
 derive instance repGenericPutDashboardOutput :: Generic PutDashboardOutput _
@@ -1305,35 +1304,35 @@ instance encodePutDashboardOutput :: Encode PutDashboardOutput where encode = ge
 
 -- | Constructs PutDashboardOutput from required parameters
 newPutDashboardOutput :: PutDashboardOutput
-newPutDashboardOutput  = PutDashboardOutput { "DashboardValidationMessages": (NullOrUndefined Nothing) }
+newPutDashboardOutput  = PutDashboardOutput { "DashboardValidationMessages": Nothing }
 
 -- | Constructs PutDashboardOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutDashboardOutput' :: ( { "DashboardValidationMessages" :: NullOrUndefined (DashboardValidationMessages) } -> {"DashboardValidationMessages" :: NullOrUndefined (DashboardValidationMessages) } ) -> PutDashboardOutput
-newPutDashboardOutput'  customize = (PutDashboardOutput <<< customize) { "DashboardValidationMessages": (NullOrUndefined Nothing) }
+newPutDashboardOutput' :: ( { "DashboardValidationMessages" :: Maybe (DashboardValidationMessages) } -> {"DashboardValidationMessages" :: Maybe (DashboardValidationMessages) } ) -> PutDashboardOutput
+newPutDashboardOutput'  customize = (PutDashboardOutput <<< customize) { "DashboardValidationMessages": Nothing }
 
 
 
 newtype PutMetricAlarmInput = PutMetricAlarmInput 
   { "AlarmName" :: (AlarmName)
-  , "AlarmDescription" :: NullOrUndefined (AlarmDescription)
-  , "ActionsEnabled" :: NullOrUndefined (ActionsEnabled)
-  , "OKActions" :: NullOrUndefined (ResourceList)
-  , "AlarmActions" :: NullOrUndefined (ResourceList)
-  , "InsufficientDataActions" :: NullOrUndefined (ResourceList)
+  , "AlarmDescription" :: Maybe (AlarmDescription)
+  , "ActionsEnabled" :: Maybe (ActionsEnabled)
+  , "OKActions" :: Maybe (ResourceList)
+  , "AlarmActions" :: Maybe (ResourceList)
+  , "InsufficientDataActions" :: Maybe (ResourceList)
   , "MetricName" :: (MetricName)
   , "Namespace" :: (Namespace)
-  , "Statistic" :: NullOrUndefined (Statistic)
-  , "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic)
-  , "Dimensions" :: NullOrUndefined (Dimensions)
+  , "Statistic" :: Maybe (Statistic)
+  , "ExtendedStatistic" :: Maybe (ExtendedStatistic)
+  , "Dimensions" :: Maybe (Dimensions)
   , "Period" :: (Period)
-  , "Unit" :: NullOrUndefined (StandardUnit)
+  , "Unit" :: Maybe (StandardUnit)
   , "EvaluationPeriods" :: (EvaluationPeriods)
-  , "DatapointsToAlarm" :: NullOrUndefined (DatapointsToAlarm)
+  , "DatapointsToAlarm" :: Maybe (DatapointsToAlarm)
   , "Threshold" :: (Threshold)
   , "ComparisonOperator" :: (ComparisonOperator)
-  , "TreatMissingData" :: NullOrUndefined (TreatMissingData)
-  , "EvaluateLowSampleCountPercentile" :: NullOrUndefined (EvaluateLowSampleCountPercentile)
+  , "TreatMissingData" :: Maybe (TreatMissingData)
+  , "EvaluateLowSampleCountPercentile" :: Maybe (EvaluateLowSampleCountPercentile)
   }
 derive instance newtypePutMetricAlarmInput :: Newtype PutMetricAlarmInput _
 derive instance repGenericPutMetricAlarmInput :: Generic PutMetricAlarmInput _
@@ -1343,12 +1342,12 @@ instance encodePutMetricAlarmInput :: Encode PutMetricAlarmInput where encode = 
 
 -- | Constructs PutMetricAlarmInput from required parameters
 newPutMetricAlarmInput :: AlarmName -> ComparisonOperator -> EvaluationPeriods -> MetricName -> Namespace -> Period -> Threshold -> PutMetricAlarmInput
-newPutMetricAlarmInput _AlarmName _ComparisonOperator _EvaluationPeriods _MetricName _Namespace _Period _Threshold = PutMetricAlarmInput { "AlarmName": _AlarmName, "ComparisonOperator": _ComparisonOperator, "EvaluationPeriods": _EvaluationPeriods, "MetricName": _MetricName, "Namespace": _Namespace, "Period": _Period, "Threshold": _Threshold, "ActionsEnabled": (NullOrUndefined Nothing), "AlarmActions": (NullOrUndefined Nothing), "AlarmDescription": (NullOrUndefined Nothing), "DatapointsToAlarm": (NullOrUndefined Nothing), "Dimensions": (NullOrUndefined Nothing), "EvaluateLowSampleCountPercentile": (NullOrUndefined Nothing), "ExtendedStatistic": (NullOrUndefined Nothing), "InsufficientDataActions": (NullOrUndefined Nothing), "OKActions": (NullOrUndefined Nothing), "Statistic": (NullOrUndefined Nothing), "TreatMissingData": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newPutMetricAlarmInput _AlarmName _ComparisonOperator _EvaluationPeriods _MetricName _Namespace _Period _Threshold = PutMetricAlarmInput { "AlarmName": _AlarmName, "ComparisonOperator": _ComparisonOperator, "EvaluationPeriods": _EvaluationPeriods, "MetricName": _MetricName, "Namespace": _Namespace, "Period": _Period, "Threshold": _Threshold, "ActionsEnabled": Nothing, "AlarmActions": Nothing, "AlarmDescription": Nothing, "DatapointsToAlarm": Nothing, "Dimensions": Nothing, "EvaluateLowSampleCountPercentile": Nothing, "ExtendedStatistic": Nothing, "InsufficientDataActions": Nothing, "OKActions": Nothing, "Statistic": Nothing, "TreatMissingData": Nothing, "Unit": Nothing }
 
 -- | Constructs PutMetricAlarmInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutMetricAlarmInput' :: AlarmName -> ComparisonOperator -> EvaluationPeriods -> MetricName -> Namespace -> Period -> Threshold -> ( { "AlarmName" :: (AlarmName) , "AlarmDescription" :: NullOrUndefined (AlarmDescription) , "ActionsEnabled" :: NullOrUndefined (ActionsEnabled) , "OKActions" :: NullOrUndefined (ResourceList) , "AlarmActions" :: NullOrUndefined (ResourceList) , "InsufficientDataActions" :: NullOrUndefined (ResourceList) , "MetricName" :: (MetricName) , "Namespace" :: (Namespace) , "Statistic" :: NullOrUndefined (Statistic) , "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic) , "Dimensions" :: NullOrUndefined (Dimensions) , "Period" :: (Period) , "Unit" :: NullOrUndefined (StandardUnit) , "EvaluationPeriods" :: (EvaluationPeriods) , "DatapointsToAlarm" :: NullOrUndefined (DatapointsToAlarm) , "Threshold" :: (Threshold) , "ComparisonOperator" :: (ComparisonOperator) , "TreatMissingData" :: NullOrUndefined (TreatMissingData) , "EvaluateLowSampleCountPercentile" :: NullOrUndefined (EvaluateLowSampleCountPercentile) } -> {"AlarmName" :: (AlarmName) , "AlarmDescription" :: NullOrUndefined (AlarmDescription) , "ActionsEnabled" :: NullOrUndefined (ActionsEnabled) , "OKActions" :: NullOrUndefined (ResourceList) , "AlarmActions" :: NullOrUndefined (ResourceList) , "InsufficientDataActions" :: NullOrUndefined (ResourceList) , "MetricName" :: (MetricName) , "Namespace" :: (Namespace) , "Statistic" :: NullOrUndefined (Statistic) , "ExtendedStatistic" :: NullOrUndefined (ExtendedStatistic) , "Dimensions" :: NullOrUndefined (Dimensions) , "Period" :: (Period) , "Unit" :: NullOrUndefined (StandardUnit) , "EvaluationPeriods" :: (EvaluationPeriods) , "DatapointsToAlarm" :: NullOrUndefined (DatapointsToAlarm) , "Threshold" :: (Threshold) , "ComparisonOperator" :: (ComparisonOperator) , "TreatMissingData" :: NullOrUndefined (TreatMissingData) , "EvaluateLowSampleCountPercentile" :: NullOrUndefined (EvaluateLowSampleCountPercentile) } ) -> PutMetricAlarmInput
-newPutMetricAlarmInput' _AlarmName _ComparisonOperator _EvaluationPeriods _MetricName _Namespace _Period _Threshold customize = (PutMetricAlarmInput <<< customize) { "AlarmName": _AlarmName, "ComparisonOperator": _ComparisonOperator, "EvaluationPeriods": _EvaluationPeriods, "MetricName": _MetricName, "Namespace": _Namespace, "Period": _Period, "Threshold": _Threshold, "ActionsEnabled": (NullOrUndefined Nothing), "AlarmActions": (NullOrUndefined Nothing), "AlarmDescription": (NullOrUndefined Nothing), "DatapointsToAlarm": (NullOrUndefined Nothing), "Dimensions": (NullOrUndefined Nothing), "EvaluateLowSampleCountPercentile": (NullOrUndefined Nothing), "ExtendedStatistic": (NullOrUndefined Nothing), "InsufficientDataActions": (NullOrUndefined Nothing), "OKActions": (NullOrUndefined Nothing), "Statistic": (NullOrUndefined Nothing), "TreatMissingData": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newPutMetricAlarmInput' :: AlarmName -> ComparisonOperator -> EvaluationPeriods -> MetricName -> Namespace -> Period -> Threshold -> ( { "AlarmName" :: (AlarmName) , "AlarmDescription" :: Maybe (AlarmDescription) , "ActionsEnabled" :: Maybe (ActionsEnabled) , "OKActions" :: Maybe (ResourceList) , "AlarmActions" :: Maybe (ResourceList) , "InsufficientDataActions" :: Maybe (ResourceList) , "MetricName" :: (MetricName) , "Namespace" :: (Namespace) , "Statistic" :: Maybe (Statistic) , "ExtendedStatistic" :: Maybe (ExtendedStatistic) , "Dimensions" :: Maybe (Dimensions) , "Period" :: (Period) , "Unit" :: Maybe (StandardUnit) , "EvaluationPeriods" :: (EvaluationPeriods) , "DatapointsToAlarm" :: Maybe (DatapointsToAlarm) , "Threshold" :: (Threshold) , "ComparisonOperator" :: (ComparisonOperator) , "TreatMissingData" :: Maybe (TreatMissingData) , "EvaluateLowSampleCountPercentile" :: Maybe (EvaluateLowSampleCountPercentile) } -> {"AlarmName" :: (AlarmName) , "AlarmDescription" :: Maybe (AlarmDescription) , "ActionsEnabled" :: Maybe (ActionsEnabled) , "OKActions" :: Maybe (ResourceList) , "AlarmActions" :: Maybe (ResourceList) , "InsufficientDataActions" :: Maybe (ResourceList) , "MetricName" :: (MetricName) , "Namespace" :: (Namespace) , "Statistic" :: Maybe (Statistic) , "ExtendedStatistic" :: Maybe (ExtendedStatistic) , "Dimensions" :: Maybe (Dimensions) , "Period" :: (Period) , "Unit" :: Maybe (StandardUnit) , "EvaluationPeriods" :: (EvaluationPeriods) , "DatapointsToAlarm" :: Maybe (DatapointsToAlarm) , "Threshold" :: (Threshold) , "ComparisonOperator" :: (ComparisonOperator) , "TreatMissingData" :: Maybe (TreatMissingData) , "EvaluateLowSampleCountPercentile" :: Maybe (EvaluateLowSampleCountPercentile) } ) -> PutMetricAlarmInput
+newPutMetricAlarmInput' _AlarmName _ComparisonOperator _EvaluationPeriods _MetricName _Namespace _Period _Threshold customize = (PutMetricAlarmInput <<< customize) { "AlarmName": _AlarmName, "ComparisonOperator": _ComparisonOperator, "EvaluationPeriods": _EvaluationPeriods, "MetricName": _MetricName, "Namespace": _Namespace, "Period": _Period, "Threshold": _Threshold, "ActionsEnabled": Nothing, "AlarmActions": Nothing, "AlarmDescription": Nothing, "DatapointsToAlarm": Nothing, "Dimensions": Nothing, "EvaluateLowSampleCountPercentile": Nothing, "ExtendedStatistic": Nothing, "InsufficientDataActions": Nothing, "OKActions": Nothing, "Statistic": Nothing, "TreatMissingData": Nothing, "Unit": Nothing }
 
 
 
@@ -1393,7 +1392,7 @@ instance encodeResourceName :: Encode ResourceName where encode = genericEncode 
 
 -- | <p>The named resource does not exist.</p>
 newtype ResourceNotFound = ResourceNotFound 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeResourceNotFound :: Newtype ResourceNotFound _
 derive instance repGenericResourceNotFound :: Generic ResourceNotFound _
@@ -1403,12 +1402,12 @@ instance encodeResourceNotFound :: Encode ResourceNotFound where encode = generi
 
 -- | Constructs ResourceNotFound from required parameters
 newResourceNotFound :: ResourceNotFound
-newResourceNotFound  = ResourceNotFound { "message": (NullOrUndefined Nothing) }
+newResourceNotFound  = ResourceNotFound { "message": Nothing }
 
 -- | Constructs ResourceNotFound's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceNotFound' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> ResourceNotFound
-newResourceNotFound'  customize = (ResourceNotFound <<< customize) { "message": (NullOrUndefined Nothing) }
+newResourceNotFound' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> ResourceNotFound
+newResourceNotFound'  customize = (ResourceNotFound <<< customize) { "message": Nothing }
 
 
 
@@ -1416,7 +1415,7 @@ newtype SetAlarmStateInput = SetAlarmStateInput
   { "AlarmName" :: (AlarmName)
   , "StateValue" :: (StateValue)
   , "StateReason" :: (StateReason)
-  , "StateReasonData" :: NullOrUndefined (StateReasonData)
+  , "StateReasonData" :: Maybe (StateReasonData)
   }
 derive instance newtypeSetAlarmStateInput :: Newtype SetAlarmStateInput _
 derive instance repGenericSetAlarmStateInput :: Generic SetAlarmStateInput _
@@ -1426,12 +1425,12 @@ instance encodeSetAlarmStateInput :: Encode SetAlarmStateInput where encode = ge
 
 -- | Constructs SetAlarmStateInput from required parameters
 newSetAlarmStateInput :: AlarmName -> StateReason -> StateValue -> SetAlarmStateInput
-newSetAlarmStateInput _AlarmName _StateReason _StateValue = SetAlarmStateInput { "AlarmName": _AlarmName, "StateReason": _StateReason, "StateValue": _StateValue, "StateReasonData": (NullOrUndefined Nothing) }
+newSetAlarmStateInput _AlarmName _StateReason _StateValue = SetAlarmStateInput { "AlarmName": _AlarmName, "StateReason": _StateReason, "StateValue": _StateValue, "StateReasonData": Nothing }
 
 -- | Constructs SetAlarmStateInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSetAlarmStateInput' :: AlarmName -> StateReason -> StateValue -> ( { "AlarmName" :: (AlarmName) , "StateValue" :: (StateValue) , "StateReason" :: (StateReason) , "StateReasonData" :: NullOrUndefined (StateReasonData) } -> {"AlarmName" :: (AlarmName) , "StateValue" :: (StateValue) , "StateReason" :: (StateReason) , "StateReasonData" :: NullOrUndefined (StateReasonData) } ) -> SetAlarmStateInput
-newSetAlarmStateInput' _AlarmName _StateReason _StateValue customize = (SetAlarmStateInput <<< customize) { "AlarmName": _AlarmName, "StateReason": _StateReason, "StateValue": _StateValue, "StateReasonData": (NullOrUndefined Nothing) }
+newSetAlarmStateInput' :: AlarmName -> StateReason -> StateValue -> ( { "AlarmName" :: (AlarmName) , "StateValue" :: (StateValue) , "StateReason" :: (StateReason) , "StateReasonData" :: Maybe (StateReasonData) } -> {"AlarmName" :: (AlarmName) , "StateValue" :: (StateValue) , "StateReason" :: (StateReason) , "StateReasonData" :: Maybe (StateReasonData) } ) -> SetAlarmStateInput
+newSetAlarmStateInput' _AlarmName _StateReason _StateValue customize = (SetAlarmStateInput <<< customize) { "AlarmName": _AlarmName, "StateReason": _StateReason, "StateValue": _StateValue, "StateReasonData": Nothing }
 
 
 
